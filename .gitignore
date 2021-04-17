@@ -127,3 +127,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Sublime Data
+# *.sublime-project   # That is probably good to sync
+*.sublime-workspace
