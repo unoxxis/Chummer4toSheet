@@ -56,7 +56,23 @@ pip install -r requirements.txt
 #--------------------
 # BUNDLE ENVIRONMENT
 #--------------------
-#echo ""
-#echo "*** SETUP BUNDLE ENVIRONMENT ***"
+echo ""
+echo "*** SETUP BUNDLE ENVIRONMENT ***"
+cd bundle
 
-# TODO: descend into bundle dir and setup the other venv.
+# Check if Virtual environment for development is already there
+if pyenv virtualenvs --bare | grep -q $BUNDLE_ENV_NAME; then
+	echo "Virtual environment <$BUNDLE_ENV_NAME> already present."
+else
+	echo "Creating virtual environment <$BUNDLE_ENV_NAME>..."
+	pyenv virtualenv $PY_VERSION $BUNDLE_ENV_NAME
+fi
+
+echo "Setting local virtual environment for pyenv..."
+pyenv local $BUNDLE_ENV_NAME
+
+echo "Activate development environment..."
+pyenv activate $BUNDLE_ENV_NAME
+
+echo "Installing requirements..."
+pip install -r requirements.txt

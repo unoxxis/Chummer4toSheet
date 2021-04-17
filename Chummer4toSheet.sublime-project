@@ -5,7 +5,8 @@
 			"file_exclude_patterns":
 			[
 				"Chummer4toSheet.sublime-workspace",
-				".python-version"
+				".python-version",
+				"bundle/.python-version"
 			],
 			"folder_exclude_patterns":
 			[
