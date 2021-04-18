@@ -1,5 +1,5 @@
 # Chummer4toSheet
-Ein Programm, welches aus .chum Charakterdateien von Chummer 4 einen PDF grafischen Charakterbogen erstellt.
+Ein Programm, welches aus .chum Charakterdateien von Chummer 4 einen grafischen Charakterbogen als PDF erstellt. 
 
 ## Lizenz
 * Shadowrun-Logo und Inhalte mit freundlicher Genehmigung von Pegasus Spiele unter Lizenz von Catalyst Game Labs und Topps Company, Inc. © 2020 Topps Company, Inc. Alle Rechte vorbehalten. Shadowrun ist eine eingetragene Handelsmarke von Topps Company, Inc.
