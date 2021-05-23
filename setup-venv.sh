@@ -51,7 +51,7 @@ echo "Activate development environment..."
 pyenv activate $DEV_ENV_NAME
 
 echo "Installing requirements..."
-pip install -r requirements.txt
+pip install -r requirements-dev.txt
 
 #--------------------
 # BUNDLE ENVIRONMENT
@@ -75,4 +75,4 @@ echo "Activate development environment..."
 pyenv activate $BUNDLE_ENV_NAME
 
 echo "Installing requirements..."
-pip install -r requirements.txt
+pip install -r requirements-bundle.txt
