@@ -19,14 +19,14 @@
 	"build_systems":
 	[
 		{
-			"name": "Run Chummer4toSheet",
+			"name": "Run Chummer4toSheet (Force Log)",
 			"working_dir": "${project_path}",
-			"shell_cmd": "\"python\" -u \"Chummer4toSheet.pyw\"",
+			"shell_cmd": "\"python\" -u \"Chummer4toSheet.pyw\" --forcelogfile",
 		},
 		{
-			"name": "Run Chummer4toSheet Debug",
+			"name": "Run Chummer4toSheet (Debug)",
 			"working_dir": "${project_path}",
-			"shell_cmd": "\"python\" -u \"Chummer4toSheet.pyw\" \"debug\"",
+			"shell_cmd": "\"python\" -u \"Chummer4toSheet.pyw\" --loglevel debug",
 		}
 	],
 }
