@@ -4,14 +4,29 @@
 		{
 			"file_exclude_patterns":
 			[
+				"Chummer4toSheet.log",
 				"Chummer4toSheet.sublime-workspace",
+				"bundle/.python-version",
 				".python-version",
-				"bundle/.python-version"
 			],
 			"folder_exclude_patterns":
 			[
+				"sheetwriter/__pycache__",
 			],
-			"path": "."
+			"path": ".",
 		}
-	]
+	],
+	"build_systems":
+	[
+		{
+			"name": "Run Chummer4toSheet",
+			"working_dir": "${project_path}",
+			"shell_cmd": "\"python\" -u \"Chummer4toSheet.pyw\"",
+		},
+		{
+			"name": "Run Chummer4toSheet Debug",
+			"working_dir": "${project_path}",
+			"shell_cmd": "\"python\" -u \"Chummer4toSheet.pyw\" \"debug\"",
+		}
+	],
 }
