@@ -9,7 +9,7 @@ import argparse
 
 # Child Modules
 from sheetwriter import WriteCharacterSheet
-from chumreader import ReadChumFile
+from chumreader import ChummerCharacter, ReadChumFile
 
 # Global Variables
 with open('VERSION', 'r') as version_file:
@@ -32,8 +32,11 @@ def main():
     logger.debug('Entering Function')
 
     # This is a placeholder to test the main two functions before the UI is ready.
-    dummychar = ReadChumFile('test/chars/Cassida.chum')
-    WriteCharacterSheet(dummychar, 'Testdatei.pdf')
+    testfile = 'test/chars/Cassida.chum'
+    char = ChummerCharacter(testfile)
+    WriteCharacterSheet(char, 'Testdatei.pdf')
+
+
 
 
 # Root Function to set up logging and call the main loop:
