@@ -19,7 +19,7 @@ def move_point(point, dx, dy):
     return tuple(p + q for p, q in zip(point, (dx, dy)))
 
 
-def WriteBlockGeneral(pdf, char, origin=(0.0, 0.0)):
+def WriteBlockGeneral(pdf, char, origin=(0.0, 0.0), border=0):
     """
     Places the general block into the current PDF page.
 
@@ -46,36 +46,36 @@ def WriteBlockGeneral(pdf, char, origin=(0.0, 0.0)):
     cellheight = 0.49
 
     # Alias
-    pdf.set_font('Agency FB', 'B', 10)
+    pdf.set_font('Agency FB', 'B', 10)  # Separate Font
 
     currpoint = move_point(origin, *leftrowoffset)
     pdf.set_xy(*currpoint)
-    pdf.cell(txt=data['alias'], w=leftcellwidth, h=cellheight, align='C')
+    pdf.cell(txt=data['alias'], w=leftcellwidth, h=cellheight, align='C', border=border)
 
     # Real Name
-    pdf.set_font('Agency FB', '', 10)
+    pdf.set_font('Agency FB', '', 10)  # Back to Normal
 
     currpoint = move_point(currpoint, 0.0, rowoffset)
     pdf.set_xy(*currpoint)
-    pdf.cell(txt=data['realname'], w=leftcellwidth, h=cellheight, align='L')
+    pdf.cell(txt=data['realname'], w=leftcellwidth, h=cellheight, align='L', border=border)
 
     # Role
     currpoint = move_point(currpoint, 0.0, rowoffset)
     pdf.set_xy(*currpoint)
-    pdf.cell(txt=data['role'], w=leftcellwidth, h=cellheight, align='L')
+    pdf.cell(txt=data['role'], w=leftcellwidth, h=cellheight, align='L', border=border)
 
     # Metatype
     currpoint = move_point(currpoint, columnoffset, -2.0 * rowoffset)
     pdf.set_xy(*currpoint)
-    pdf.cell(txt=data['metatype'], w=rightcellwidth, h=cellheight, align='C')
+    pdf.cell(txt=data['metatype'], w=rightcellwidth, h=cellheight, align='C', border=border)
 
     # Age
     currpoint = move_point(currpoint, 0.0, rowoffset)
     pdf.set_xy(*currpoint)
-    pdf.cell(txt=data['age'], w=rightcellwidth, h=cellheight, align='C')
+    pdf.cell(txt=data['age'], w=rightcellwidth, h=cellheight, align='C', border=border)
 
     # Sex
     currpoint = move_point(currpoint, 0.0, rowoffset)
     pdf.set_xy(*currpoint)
-    pdf.cell(txt=data['sex'], w=rightcellwidth, h=cellheight, align='C')
+    pdf.cell(txt=data['sex'], w=rightcellwidth, h=cellheight, align='C', border=border)
 

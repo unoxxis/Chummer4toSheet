@@ -30,7 +30,7 @@
 		{
 			"name": "Run Chummer4toSheet (Debug)",
 			"working_dir": "${project_path}",
-			"shell_cmd": "\"python\" -u \"Chummer4toSheet.pyw\" --loglevel debug --lowres",
+			"shell_cmd": "\"python\" -u \"Chummer4toSheet.pyw\" --loglevel debug --lowres --border",
 		},
 		{
 			"file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
