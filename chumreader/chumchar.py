@@ -9,7 +9,7 @@ import sys
 from .chumreader import ReadChumFile
 
 # Block Generation Functions
-from .blockassembly import AssembleBlockGeneral
+from .blockassembly import *
 
 
 # Globals
@@ -79,9 +79,8 @@ class ChummerCharacter:
         """
 
         logger = logging.getLogger('chumreader.ChummerCharacter.GetBlock')
-        self.clogger.info("Generating Block <{block}>")
+        self.clogger.info(f"Generating Block <{block}>")
 
-        logger.debug(self.blocks.keys())
         if block not in self.blocks.keys():
             logger.debug('Block is not yet generated and needs to be assembled.')
             self.AssembleBlock(block)
