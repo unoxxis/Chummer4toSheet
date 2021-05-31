@@ -4,19 +4,7 @@
 import logging
 from fpdf import FPDF
 
-
-def move_point(point, dx, dy):
-    """Moves a point tuple relatively.
-
-    Parameters:
-        point (2-tuple of float): Origin
-        dx (float): Relative Movement of x
-        dy (float): Relative Movement of y
-
-    Returns:
-        point (2-tuple of floar): New Point
-    """
-    return tuple(p + q for p, q in zip(point, (dx, dy)))
+from .geom_util import move_point, draw_cross
 
 
 def WriteBlockGeneral(pdf, char, origin=(0.0, 0.0), border=0):
