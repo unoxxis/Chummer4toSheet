@@ -5,7 +5,12 @@ import logging
 import untangle
 import sys
 
+# XML Reader
 from .chumreader import ReadChumFile
+
+# Block Generation Functions
+from .blockassembly import AssembleBlockGeneral
+
 
 # Globals
 _CHUM_MIN_VERSION = 490     # Minimum Chummer Version
@@ -53,7 +58,7 @@ class ChummerCharacter:
                 raise ValueError(f'Stored XML data is from a too old Chummer version. Please update at least to version {_CHUM_MIN_VERSION}!')
         except AttributeError:
             self.clogger.error('XML data seems not to be a chummer file!')
-            raise ValueError('stored XML data has wrong format!')
+            raise
 
         # Init Alias for faster instantiation
         self.alias = self.xmldata.alias.cdata
@@ -61,9 +66,9 @@ class ChummerCharacter:
         # Init Block Dictionary
         self.blocks = dict()
 
-    def GetBlock(block):
+    def GetBlock(self, block):
         """
-        Returns a dictionary of a given character sheet block for printing. Generates missing blocks on-the-fly.
+        Returns a dictionary of a given character sheet block for printing. Requests assembly of missing blocks.
 
         Parameters:
             block (str): Block name, currently supported:
@@ -72,4 +77,32 @@ class ChummerCharacter:
         Returns:
             blockdata (dict): Dictionary of the block data.
         """
-        pass
+
+        logger = logging.getLogger('chumreader.ChummerCharacter.GetBlock')
+        self.clogger.info("Requesting Block <{block}>")
+
+        logger.debug(self.blocks.keys())
+        if block not in self.blocks.keys():
+            logger.debug('Block is not yet generated and needs to be assembled.')
+            self.AssembleBlock(block)
+
+        return self.blocks[block]
+
+    def AssembleBlock(self, block):
+        """
+        Assemble the requested block into self.blocks.
+
+        Parameters:
+            block (str): Block name, see GetBlock for list of possible blocks.
+        """
+
+        logger = logging.getLogger('chumreader.ChummerCharacter.AssembleBlock')
+        logger.debug(f"Requested assembly of block '{block}'")
+
+        # Figure out the assembly function
+        assemble_function_name = 'AssembleBlock' + block.capitalize()
+        assemble_function = globals()[assemble_function_name]
+        logger.debug(f'Assemble function: {assemble_function}')
+
+        # Call the assembly function:
+        assemble_function(self)

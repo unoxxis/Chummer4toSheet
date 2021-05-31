@@ -34,7 +34,11 @@ def main():
     # This is a placeholder to test the main two functions before the UI is ready.
     testfile = 'test/chars/Cassida.chum'
     char = ChummerCharacter(testfile)
-    WriteCharacterSheet(char, 'Testdatei.pdf')
+
+    bl = char.GetBlock('general')
+    logger.debug(f"general block: {bl}")
+
+    # WriteCharacterSheet(char, 'Testdatei.pdf')
 
 
 
