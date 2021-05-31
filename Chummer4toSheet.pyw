@@ -26,7 +26,14 @@ _LOGFORMAT_CONSOLE_ = '%(name)s:%(levelname)s: %(message)s'
 
 
 # Main Function
-def main():
+def main(lowres=False):
+    """
+    Main function of Chummer4toSheet
+
+    Parameters:
+        lowres (bool): Whether to use low res backgrounds for speed.
+    """
+
     # Logging
     logger = logging.getLogger('main')
     logger.debug('Entering Function')
@@ -34,11 +41,7 @@ def main():
     # This is a placeholder to test the main two functions before the UI is ready.
     testfile = 'test/chars/Cassida.chum'
     char = ChummerCharacter(testfile)
-
-    bl = char.GetBlock('general')
-    logger.debug(f"general block: {bl}")
-
-    # WriteCharacterSheet(char, 'Testdatei.pdf')
+    WriteCharacterSheet(char, 'test/Cassida.pdf', lowres=lowres)
 
 
 
@@ -60,6 +63,8 @@ if __name__ == '__main__':
                     help='Disable writing to logfile')
     ap.add_argument('-F', '--forcelogfile', action='store_true',
                     help='Force writing to logfile even in dev builds')
+    ap.add_argument('--lowres', action='store_true',
+                    help='Use lowres images')
     ap.add_argument('--version', action='version', version=f'%(prog)s v{_VERSION_}')
 
     options = ap.parse_args()
@@ -110,7 +115,7 @@ if __name__ == '__main__':
     logging.debug(f'options = {options}')
 
     try:
-        main()
+        main(lowres=options.lowres)
         logging.info(f'Program terminated normally!\n******\n\n')
 
     except Exception:

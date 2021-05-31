@@ -4,10 +4,13 @@
 		{
 			"file_exclude_patterns":
 			[
-				".python-version",
-				"bundle/.python-version",
+				"sheets/res/AGENCYB.pkl",
 				"Chummer4toSheet.sublime-workspace",
+				"sheets/res/AGENCYR.pkl",
+				"bundle/.python-version",
 				"Chummer4toSheet.log",
+				".python-version",
+				"test/Cassida.pdf",
 			],
 			"folder_exclude_patterns":
 			[
@@ -27,7 +30,7 @@
 		{
 			"name": "Run Chummer4toSheet (Debug)",
 			"working_dir": "${project_path}",
-			"shell_cmd": "\"python\" -u \"Chummer4toSheet.pyw\" --loglevel debug",
+			"shell_cmd": "\"python\" -u \"Chummer4toSheet.pyw\" --loglevel debug --lowres",
 		},
 		{
 			"file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",

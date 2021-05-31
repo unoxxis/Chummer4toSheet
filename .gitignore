@@ -131,3 +131,9 @@ dmypy.json
 # Sublime Data
 # *.sublime-project   # That is probably good to sync
 *.sublime-workspace
+
+# FPDF font caches
+*.pkl
+
+# Test PDFs
+test/*.pdf
