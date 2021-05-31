@@ -5,7 +5,7 @@ import logging
 from fpdf import FPDF
 
 # Blockwriters
-from .blockwriters import WriteBlockGeneral
+from .blockwriters import *
 
 
 sheets_highres = {
@@ -70,7 +70,10 @@ def WriteCharacterSheet(char, filename, lowres=False, borders=False):
     pdf.image(sheet_backgrounds['Allgemeines'], x=0, y=0, w=21.0)
 
     logger.info('Writing General Block...')
-    WriteBlockGeneral(pdf, char, origin=(0.96, 1.29), border=border)
+    WriteBlockGeneral(pdf, char, origin=(0.96, 1.30), border=border)
+
+    logger.info('Writing Attributes Block...')
+    WriteBlockAttributes(pdf, char, origin=(0.96, 4.15), border=border)
 
     pdf.output(name=filename, dest='F')
 
