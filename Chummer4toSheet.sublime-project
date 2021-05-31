@@ -6,11 +6,13 @@
 			[
 				"sheets/res/AGENCYB.pkl",
 				"Chummer4toSheet.sublime-workspace",
+				"AGENCYB.pkl",
+				"test/Cassida.pdf",
 				"sheets/res/AGENCYR.pkl",
 				"bundle/.python-version",
 				"Chummer4toSheet.log",
 				".python-version",
-				"test/Cassida.pdf",
+				"AGENCYR.pkl",
 			],
 			"folder_exclude_patterns":
 			[
@@ -26,6 +28,11 @@
 			"name": "Run Chummer4toSheet (Force Log)",
 			"working_dir": "${project_path}",
 			"shell_cmd": "\"python\" -u \"Chummer4toSheet.pyw\" --forcelogfile",
+		},
+		{
+			"name": "Run Chummer4toSheet (HighRes + Border)",
+			"working_dir": "${project_path}",
+			"shell_cmd": "\"python\" -u \"Chummer4toSheet.pyw\" --border",
 		},
 		{
 			"name": "Run Chummer4toSheet (Debug)",
