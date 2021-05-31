@@ -37,3 +37,18 @@ def AssembleBlockGeneral(self):
 
     logger.debug(f"Assembled block: {block}")
     self.blocks['general'] = block
+
+
+def AssembleBlockTemplate(self):
+    """Assemble the data that goes into the <template> block of the character sheet and store it in the object."""
+
+    # Logging
+    logger = logging.getLogger('chumreader.AssembleBlockGeneral')
+    logger.debug('Entering Function')
+
+    block = dict()
+
+    # Here goes the Block filling
+
+    logger.debug(f"Assembled block: {block}")
+    self.blocks['general'] = block
