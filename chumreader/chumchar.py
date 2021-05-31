@@ -79,7 +79,7 @@ class ChummerCharacter:
         """
 
         logger = logging.getLogger('chumreader.ChummerCharacter.GetBlock')
-        self.clogger.info("Requesting Block <{block}>")
+        self.clogger.info("Generating Block <{block}>")
 
         logger.debug(self.blocks.keys())
         if block not in self.blocks.keys():

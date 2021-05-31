@@ -58,6 +58,7 @@ def WriteCharacterSheet(char, filename, lowres=False, borders=False):
     if borders:
         # Set bordercolor to red
         pdf.set_draw_color(255, 0, 0)
+        pdf.set_fill_color(255, 0, 0)
 
     # PAGE ONE
     pdf.add_page()
@@ -65,7 +66,7 @@ def WriteCharacterSheet(char, filename, lowres=False, borders=False):
     logger.info(f'New Page {currpage}:')
 
     # Background
-    logger.info('Embedding Background "Allgemeines"...')
+    logger.info(f"Embedding Background '{sheet_backgrounds['Allgemeines']}'...")
     pdf.image(sheet_backgrounds['Allgemeines'], x=0, y=0, w=21.0)
 
     logger.info('Writing General Block...')

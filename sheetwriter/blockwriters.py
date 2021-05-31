@@ -41,12 +41,17 @@ def WriteBlockGeneral(pdf, char, origin=(0.0, 0.0), border=0):
     leftrowoffset = (2.14 + margin, 0.14 + baselineadjust)
     columnoffset = 11.6
     rowoffset = 0.575
-    leftcellwidth = 9.50 - 2 * margin
-    rightcellwidth = 2.55 - 2 * margin
+    leftcellwidth = 9.525 - 2 * margin
+    rightcellwidth = 2.575 - 2 * margin
     cellheight = 0.49
 
     # Alias
     pdf.set_font('Agency FB', 'B', 10)  # Separate Font
+
+    if border > 0:
+        # Draw Origin
+        currpoint = move_point(origin, -0.05, -0.05)
+        pdf.ellipse(*currpoint, 0.1, 0.1, style='F')
 
     currpoint = move_point(origin, *leftrowoffset)
     pdf.set_xy(*currpoint)

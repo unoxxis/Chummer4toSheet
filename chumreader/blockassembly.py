@@ -35,4 +35,5 @@ def AssembleBlockGeneral(self):
     block['age'] = self.xmldata.age.cdata
     block['sex'] = self.xmldata.sex.cdata
 
+    logger.debug(f"Assembled block: {block}")
     self.blocks['general'] = block
