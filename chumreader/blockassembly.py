@@ -84,6 +84,11 @@ def AssembleBlockAttributes(self):
             vmax = int(a.metatypeaugmax.cdata)
 
             if attributename == 'EDG':
+                for q in self.xmldata.qualities.quality:
+                    # This is not reflected anywhere, so we need to check for it manually...
+                    if q.name.cdata == 'Lucky':
+                        vmax += 1
+
                 preblock = [f'{vnat:d}', f'{vrac:+d}', f'{vact:d}', f'{vmax:d}']
             else:
                 preblock = [f'{vnat:d}', f'{vrac:+d}', f'{vaug:+d}', f'{vact:d}', f'{vmax:d}']
