@@ -4,13 +4,14 @@
 		{
 			"file_exclude_patterns":
 			[
-				"Chummer4toSheet.log",
-				"Chummer4toSheet.sublime-workspace",
-				"bundle/.python-version",
 				".python-version",
+				"bundle/.python-version",
+				"Chummer4toSheet.sublime-workspace",
+				"Chummer4toSheet.log",
 			],
 			"folder_exclude_patterns":
 			[
+				"chumreader/__pycache__",
 				"sheetwriter/__pycache__",
 			],
 			"path": ".",
@@ -27,6 +28,12 @@
 			"name": "Run Chummer4toSheet (Debug)",
 			"working_dir": "${project_path}",
 			"shell_cmd": "\"python\" -u \"Chummer4toSheet.pyw\" --loglevel debug",
-		}
+		},
+		{
+			"file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+			"name": "Anaconda Python Builder",
+			"selector": "source.python",
+			"shell_cmd": "\"python\" -u \"$file\"",
+		},
 	],
 }

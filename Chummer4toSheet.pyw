@@ -9,6 +9,7 @@ import argparse
 
 # Child Modules
 from sheetwriter import WriteCharacterSheet
+from chumreader import ReadChumFile
 
 # Global Variables
 with open('VERSION', 'r') as version_file:
@@ -30,8 +31,8 @@ def main():
     logger = logging.getLogger('main')
     logger.debug('Entering Function')
 
-    dummychar = {'Name': 'Doof', 'SomeParameter': 'Value1'}
-
+    # This is a placeholder to test the main two functions before the UI is ready.
+    dummychar = ReadChumFile('test/chars/Cassida.chum')
     WriteCharacterSheet(dummychar, 'Testdatei.pdf')
 
 
