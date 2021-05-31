@@ -55,8 +55,10 @@ def AssembleBlockAttributes(self):
         attributename = a.name.cdata
         if attributename == 'AGI':
             attributename = 'GES'
+        elif attributename == 'BOD':
+            attributename = 'KON'
 
-        if attributename in ['KON', 'AGI', 'REA', 'STR', 'CHA', 'INT', 'LOG', 'WIL', 'EDG']:
+        if attributename in ['KON', 'GES', 'REA', 'STR', 'CHA', 'INT', 'LOG', 'WIL', 'EDG']:
             # Racial
             # Guessed from metatype min and max if they are not 1 / 6
             vrac = 0
