@@ -50,8 +50,6 @@ def WriteCharacterSheet(char, filename, lowres=False, borders=False):
     pdf = FPDF(orientation='P', unit='cm', format='A4')
 
     # Load Fonts
-    # pdf.add_font('Shadowrun', '', fname='sheets/res/SHADRG.TTF', uni=True)
-    # pdf.add_font('Shadowrun', 'B', fname='sheets/res/SHADB.TTF', uni=True)
     pdf.add_font('Agency FB', '', fname='sheets/res/AGENCYR.TTF', uni=True)
     pdf.add_font('Agency FB', 'B', fname='sheets/res/AGENCYB.TTF', uni=True)
 
