@@ -4,20 +4,18 @@
 		{
 			"file_exclude_patterns":
 			[
-				"sheets/res/AGENCYB.pkl",
-				"Chummer4toSheet.sublime-workspace",
 				"AGENCYB.pkl",
 				"test/Cassida.pdf",
-				"sheets/res/AGENCYR.pkl",
-				"bundle/.python-version",
-				"Chummer4toSheet.log",
 				".python-version",
+				"Chummer4toSheet.sublime-workspace",
+				"Chummer4toSheet.log",
 				"AGENCYR.pkl",
+				"bundle/.python-version",
 			],
 			"folder_exclude_patterns":
 			[
-				"chumreader/__pycache__",
 				"sheetwriter/__pycache__",
+				"chumreader/__pycache__",
 			],
 			"path": ".",
 		}

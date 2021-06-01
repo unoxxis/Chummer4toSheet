@@ -76,7 +76,7 @@ if __name__ == '__main__':
     lh_stdout = logging.StreamHandler(sys.stdout)
     lh_stderr = logging.StreamHandler(sys.stderr)
     lh_stderr.setLevel(logging.ERROR)
-    lh_logfile = logging.handlers.RotatingFileHandler(options.logfilename, mode='a', encoding='utf16',
+    lh_logfile = logging.handlers.RotatingFileHandler(options.logfilename, mode='a', encoding='utf-8',
                                                       maxBytes=1024 * 1024, backupCount=2)
     # Formatters
     lf_console = logging.Formatter(_LOGFORMAT_CONSOLE_)
