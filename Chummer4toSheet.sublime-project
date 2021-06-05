@@ -8,11 +8,11 @@
 				"AGENCYR.pkl",
 				"Chummer4toSheet.log",
 				"test/Cassida.pdf",
-				"test/empty.pychum",
+				"\"test/Wandler Charakterbogen v21.pdf\"",
 				".python-version",
 				"bundle/.python-version",
 				"AGENCYB.pkl",
-				"\"test/Wandler Charakterbogen v21.pdf\"",
+				"test/Cassida.pychum",
 			],
 			"folder_exclude_patterns":
 			[

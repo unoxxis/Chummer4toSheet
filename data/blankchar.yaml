@@ -1,17 +1,16 @@
 alias: New Character
-metatype:
-  type: Human
-  variant: ''
+metatype: Human
 personal:
   age: ''
   eyes: ''
-  name: ''
   portrait: null
   sex: ''
   height: ''
   weight: ''
   skin: ''
   hair: ''
+  realname: ''
+background:
   role: ''
 attributes:
   KON: {natural: 1, racial: 0, augment: 0, actual: 1, augmented_max: 9}
@@ -23,3 +22,7 @@ attributes:
   LOG: {natural: 1, racial: 0, augment: 0, actual: 1, augmented_max: 9}
   WIL: {natural: 1, racial: 0, augment: 0, actual: 1, augmented_max: 9}
   EDG: {natural: 1, racial: 1, augment: 0, actual: 2, augmented_max: 7}
+  MAG: {natural: 0, augment: 0, actual: 0, augmented_max: 0}
+  RES: {natural: 0, augment: 0, actual: 0, augmented_max: 0}
+essence:
+  reference: 6

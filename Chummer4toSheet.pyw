@@ -10,7 +10,7 @@ import argparse
 # Child Modules
 # from sheetwriter import WriteCharacterSheet
 # from chumreader import ChummerCharacter, ReadChumFile
-from chumchar import InitializeChummerCharacter, SaveCharacter
+from chumchar import ImportChummerCharacter, SaveCharacter
 import pprint
 
 # Global Variables
@@ -46,9 +46,9 @@ def main(lowres=False, borders=False):
     # char = ChummerCharacter(testfile)
     # WriteCharacterSheet(char, 'test/Cassida.pdf', lowres=lowres, borders=borders)
 
-    testchar = InitializeChummerCharacter()
-    pprint.pprint(testchar)
-    SaveCharacter(testchar, 'test/empty.pychum')
+    testchar = ImportChummerCharacter(testfile)
+    # pprint.pprint(testchar)
+    SaveCharacter(testchar, 'test/Cassida.pychum')
 
 
 
