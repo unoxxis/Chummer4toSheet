@@ -505,6 +505,10 @@
 					</qualities>
 					<bonus>
 						<reach>1</reach>
+						<armor>
+							<b>1</b>
+							<i>1</i>
+						</armor>
 					</bonus>
 					<source>RC</source>
 					<page>55</page>
@@ -524,6 +528,10 @@
 					</qualities>
 					<bonus>
 						<reach>1</reach>
+						<armor>
+							<b>1</b>
+							<i>1</i>
+						</armor>
 					</bonus>
 					<source>RC</source>
 					<page>55</page>
@@ -542,6 +550,10 @@
 					</qualities>
 					<bonus>
 						<reach>1</reach>
+						<armor>
+							<b>1</b>
+							<i>1</i>
+						</armor>
 					</bonus>
 					<source>RC</source>
 					<page>56</page>
@@ -561,6 +573,10 @@
 					</qualities>
 					<bonus>
 						<reach>1</reach>
+						<armor>
+							<b>1</b>
+							<i>1</i>
+						</armor>
 					</bonus>
 					<source>RC</source>
 					<page>57</page>

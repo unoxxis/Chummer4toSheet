@@ -4,18 +4,21 @@
 		{
 			"file_exclude_patterns":
 			[
-				"AGENCYB.pkl",
-				"test/Cassida.pdf",
-				".python-version",
 				"Chummer4toSheet.sublime-workspace",
-				"Chummer4toSheet.log",
 				"AGENCYR.pkl",
+				"Chummer4toSheet.log",
+				"test/Cassida.pdf",
+				"test/empty.pychum",
+				".python-version",
 				"bundle/.python-version",
+				"AGENCYB.pkl",
+				"\"test/Wandler Charakterbogen v21.pdf\"",
 			],
 			"folder_exclude_patterns":
 			[
-				"sheetwriter/__pycache__",
+				"chumchar/__pycache__",
 				"chumreader/__pycache__",
+				"sheetwriter/__pycache__",
 			],
 			"path": ".",
 		}
@@ -36,6 +39,11 @@
 			"name": "Run Chummer4toSheet (Debug)",
 			"working_dir": "${project_path}",
 			"shell_cmd": "\"python\" -u \"Chummer4toSheet.pyw\" --loglevel debug --lowres --border",
+		},
+		{
+			"name": "Convert Chummer XML Data",
+			"working_dir": "${project_path}/data",
+			"shell_cmd": "\"python\" -u \"chummer_convert.py\"",
 		},
 		{
 			"file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",

@@ -1,0 +1,1678 @@
+Anaconda Shapeshifter:
+  attribute_racials:
+    CHA: -1
+    EDG: 0
+    GES: 0
+    INT: 0
+    KON: 3
+    LOG: 0
+    REA: -1
+    STR: 5
+    WIL: 0
+  basetype: Anaconda Shapeshifter
+  bp: '60'
+  category: Shapeshifter
+  improvements:
+    metatype.critter:
+      effect: crittertab
+      text: Metatyp
+      type: special
+    metatype.magic:
+      effect: enable_magic
+      text: Metatyp
+      type: special
+    metatype.reach:
+      property: reach
+      text: Metatyp
+      type: derived
+      value: 2
+  movement:
+    fly: null
+    run: 10
+    swim: null
+    walk: 5
+  powers:
+    Allergy:
+      select: Silver, Severe
+    Dual Natured:
+      select: null
+    Enhanced Senses:
+      select: Thermal
+    Natural Weapon:
+      select: 'Bite: DV STR/2 + 2, AP 0'
+    Regeneration:
+      select: null
+    Sapience:
+      select: null
+    Vulnerability:
+      select: Silver
+  qualities:
+    Distinctive Style:
+      category: negative
+      removable: false
+      select: null
+  source: CI
+  source_page: '90'
+  text: "B\xE4r (Gestaltwandler)"
+Bear Shapeshifter:
+  attribute_racials:
+    CHA: 0
+    EDG: 0
+    GES: -2
+    INT: -1
+    KON: 6
+    LOG: -1
+    REA: -1
+    STR: 6
+    WIL: -1
+  basetype: Bear Shapeshifter
+  bp: '80'
+  category: Shapeshifter
+  improvements:
+    metatype.critter:
+      effect: crittertab
+      text: Metatyp
+      type: special
+    metatype.magic:
+      effect: enable_magic
+      text: Metatyp
+      type: special
+    metatype.reach:
+      property: reach
+      text: Metatyp
+      type: derived
+      value: 1
+  movement:
+    fly: null
+    run: 50
+    swim: null
+    walk: 15
+  powers:
+    Allergy:
+      select: Silver, Severe
+    Dual Natured:
+      select: null
+    Enhanced Senses:
+      select: Smell
+    Natural Weapon:
+      select: 'Claws/Bite: DV STR/2 + 2, AP 0'
+    Regeneration:
+      select: null
+    Sapience:
+      select: null
+    Vulnerability:
+      select: Silver
+  qualities:
+    Distinctive Style:
+      category: negative
+      removable: false
+      select: null
+  source: RC
+  source_page: '90'
+  text: "B\xE4r (Gestaltwandler)"
+Centaur:
+  attribute_racials:
+    CHA: 0
+    EDG: -1
+    GES: 0
+    INT: -1
+    KON: 1
+    LOG: -1
+    REA: 0
+    STR: 1
+    WIL: 0
+  basetype: Centaur
+  bp: '30'
+  category: Sapient Critter
+  improvements:
+    metatype.critter:
+      effect: crittertab
+      text: Metatyp
+      type: special
+    metatype.lifestylecost:
+      property: cost_increase
+      text: Metatyp
+      type: lifestyle
+      value: 50
+    metatype.magic:
+      effect: enable_magic
+      text: Metatyp
+      type: special
+    metatype.reach:
+      property: reach
+      text: Metatyp
+      type: derived
+      value: 1
+  movement:
+    fly: null
+    run: 100
+    swim: null
+    walk: 20
+  powers:
+    Enhanced Senses:
+      select: Low-Light Vision, Thermographic Vision
+    Magic Sense:
+      select: null
+    Natural Weapon:
+      select: 'Kick: DV (STR/2)P, AP 0'
+    Sapience:
+      select: null
+  qualities:
+    Distinctive Style:
+      category: negative
+      removable: false
+      select: null
+    Uncouth:
+      category: negative
+      removable: true
+      select: null
+    Uneducated:
+      category: negative
+      removable: true
+      select: null
+  source: RC
+  source_page: '88'
+  text: Zentaur
+Cyclops:
+  attribute_racials:
+    CHA: -2
+    EDG: 0
+    GES: -1
+    INT: -1
+    KON: 4
+    LOG: -1
+    REA: 0
+    STR: 4
+    WIL: 0
+  basetype: Troll
+  bp: '45'
+  category: Metavariant
+  improvements:
+    metatype.armor.ballistic:
+      property: armor_ballistic
+      text: Metatyp
+      type: derived
+      value: 1
+    metatype.armor.impact:
+      property: armor_impact
+      text: Metatyp
+      type: derived
+      value: 1
+    metatype.reach:
+      property: reach
+      text: Metatyp
+      type: derived
+      value: 1
+  movement:
+    fly: null
+    run: 35
+    swim: '7'
+    walk: 15
+  powers: null
+  qualities:
+    Cyclopean Eye:
+      category: negative
+      removable: false
+      select: null
+    Distinctive Style:
+      category: negative
+      removable: false
+      select: null
+    Metagenetic Improvement:
+      category: positive
+      removable: false
+      select: STR
+  source: RC
+  source_page: '58'
+  text: Zyklop
+Dryad:
+  attribute_racials:
+    CHA: 2
+    EDG: 0
+    GES: 1
+    INT: 0
+    KON: 0
+    LOG: 0
+    REA: 0
+    STR: 0
+    WIL: 0
+  basetype: Elf
+  bp: '45'
+  category: Metavariant
+  improvements: {}
+  movement:
+    fly: null
+    run: 25
+    swim: '6'
+    walk: 10
+  powers: null
+  qualities:
+    Distinctive Style:
+      category: negative
+      removable: false
+      select: null
+    Glamour:
+      category: positive
+      removable: false
+      select: null
+    Low-Light Vision:
+      category: positive
+      removable: false
+      select: null
+    Symbiosis:
+      category: negative
+      removable: false
+      select: null
+  source: RC
+  source_page: '54'
+  text: Dryade
+Dwarf:
+  attribute_racials:
+    CHA: 0
+    EDG: 0
+    GES: 0
+    INT: 0
+    KON: 1
+    LOG: 0
+    REA: -1
+    STR: 2
+    WIL: 1
+  basetype: Dwarf
+  bp: '25'
+  category: Metahuman
+  improvements: {}
+  movement:
+    fly: null
+    run: 20
+    swim: '4'
+    walk: 8
+  powers: null
+  qualities:
+    Thermographic Vision:
+      category: positive
+      removable: false
+      select: null
+  source: SR4
+  source_page: '89'
+  text: Zwerg
+Eagle Shapeshifter:
+  attribute_racials:
+    CHA: 1
+    EDG: 0
+    GES: 0
+    INT: 0
+    KON: 0
+    LOG: 0
+    REA: 0
+    STR: 0
+    WIL: 2
+  basetype: Eagle Shapeshifter
+  bp: '60'
+  category: Shapeshifter
+  improvements:
+    metatype.critter:
+      effect: crittertab
+      text: Metatyp
+      type: special
+    metatype.magic:
+      effect: enable_magic
+      text: Metatyp
+      type: special
+  movement:
+    fly: 18/80
+    run: 6
+    swim: null
+    walk: 3
+  powers:
+    Allergy:
+      select: Silver, Severe
+    Dual Natured:
+      select: null
+    Enhanced Senses:
+      select: Vision Enhancement (2), Vision Magnification
+    Natural Weapon:
+      select: 'Claws/Bite: DV STR/2 + 2, AP 0'
+    Regeneration:
+      select: null
+    Sapience:
+      select: null
+    Vulnerability:
+      select: Silver
+  qualities:
+    Distinctive Style:
+      category: negative
+      removable: false
+      select: null
+  source: RC
+  source_page: '90'
+  text: Adler (Gestaltwandler)
+Elf:
+  attribute_racials:
+    CHA: 2
+    EDG: 0
+    GES: 1
+    INT: 0
+    KON: 0
+    LOG: 0
+    REA: 0
+    STR: 0
+    WIL: 0
+  basetype: Elf
+  bp: '30'
+  category: Metahuman
+  improvements: {}
+  movement:
+    fly: null
+    run: 25
+    swim: '6'
+    walk: 10
+  powers: null
+  qualities:
+    Low-Light Vision:
+      category: positive
+      removable: false
+      select: null
+  source: SR4
+  source_page: '89'
+  text: Elf
+Fomori:
+  attribute_racials:
+    CHA: -2
+    EDG: 0
+    GES: -1
+    INT: -1
+    KON: 4
+    LOG: -1
+    REA: 0
+    STR: 4
+    WIL: 0
+  basetype: Troll
+  bp: '45'
+  category: Metavariant
+  improvements:
+    metatype.armor.ballistic:
+      property: armor_ballistic
+      text: Metatyp
+      type: derived
+      value: 1
+    metatype.armor.impact:
+      property: armor_impact
+      text: Metatyp
+      type: derived
+      value: 1
+    metatype.reach:
+      property: reach
+      text: Metatyp
+      type: derived
+      value: 1
+  movement:
+    fly: null
+    run: 35
+    swim: '7'
+    walk: 15
+  powers: null
+  qualities:
+    Arcane Arrester:
+      category: positive
+      removable: false
+      select: null
+    Distinctive Style:
+      category: negative
+      removable: false
+      select: null
+    Metagenetic Improvement:
+      category: positive
+      removable: false
+      select: BOD
+    Thermographic Vision:
+      category: positive
+      removable: false
+      select: null
+  source: RC
+  source_page: '58'
+  text: Fomori
+Fox Shapeshifter:
+  attribute_racials:
+    CHA: 0
+    EDG: 0
+    GES: 1
+    INT: 1
+    KON: -1
+    LOG: 0
+    REA: 1
+    STR: -2
+    WIL: 0
+  basetype: Fox Shapeshifter
+  bp: '50'
+  category: Shapeshifter
+  improvements:
+    metatype.critter:
+      effect: crittertab
+      text: Metatyp
+      type: special
+    metatype.magic:
+      effect: enable_magic
+      text: Metatyp
+      type: special
+    metatype.reach:
+      property: reach
+      text: Metatyp
+      type: derived
+      value: -1
+  movement:
+    fly: null
+    run: 30
+    swim: null
+    walk: 12
+  powers:
+    Allergy:
+      select: Silver, Severe
+    Dual Natured:
+      select: null
+    Enhanced Senses:
+      select: Hearing, Low Light Vision, Smell, Taste
+    Natural Weapon:
+      select: 'Claws/Bite: DV STR/2 + 2, AP 0'
+    Regeneration:
+      select: null
+    Sapience:
+      select: null
+    Vulnerability:
+      select: Silver
+  qualities:
+    Distinctive Style:
+      category: negative
+      removable: false
+      select: null
+  source: RC
+  source_page: '90'
+  text: Fuchs (Gestaltwandler)
+Giant:
+  attribute_racials:
+    CHA: -2
+    EDG: 0
+    GES: -1
+    INT: -1
+    KON: 4
+    LOG: -1
+    REA: 0
+    STR: 4
+    WIL: 0
+  basetype: Troll
+  bp: '40'
+  category: Metavariant
+  improvements:
+    metatype.armor.ballistic:
+      property: armor_ballistic
+      text: Metatyp
+      type: derived
+      value: 1
+    metatype.armor.impact:
+      property: armor_impact
+      text: Metatyp
+      type: derived
+      value: 1
+    metatype.reach:
+      property: reach
+      text: Metatyp
+      type: derived
+      value: 1
+  movement:
+    fly: null
+    run: 35
+    swim: '7'
+    walk: 15
+  powers: null
+  qualities:
+    Dermal Alteration (Bark Skin):
+      category: positive
+      removable: false
+      select: null
+    Distinctive Style:
+      category: negative
+      removable: false
+      select: null
+    Thermographic Vision:
+      category: positive
+      removable: false
+      select: null
+  source: RC
+  source_page: '59'
+  text: Riese
+Gnome:
+  attribute_racials:
+    CHA: 0
+    EDG: 0
+    GES: 0
+    INT: 0
+    KON: 1
+    LOG: 0
+    REA: -1
+    STR: 2
+    WIL: 1
+  basetype: Dwarf
+  bp: '25'
+  category: Metavariant
+  improvements: {}
+  movement:
+    fly: null
+    run: 20
+    swim: '4'
+    walk: 8
+  powers: null
+  qualities:
+    Arcane Arrester:
+      category: positive
+      removable: false
+      select: null
+    Distinctive Style:
+      category: negative
+      removable: false
+      select: null
+    Neoteny:
+      category: negative
+      removable: false
+      select: null
+    Thermographic Vision:
+      category: positive
+      removable: false
+      select: null
+  source: RC
+  source_page: '57'
+  text: Gnom
+Haruman:
+  attribute_racials:
+    CHA: 0
+    EDG: 0
+    GES: 0
+    INT: 0
+    KON: 1
+    LOG: 0
+    REA: -1
+    STR: 2
+    WIL: 1
+  basetype: Dwarf
+  bp: '50'
+  category: Metavariant
+  improvements: {}
+  movement:
+    fly: null
+    run: 20
+    swim: '4'
+    walk: 8
+  powers: null
+  qualities:
+    Distinctive Style:
+      category: negative
+      removable: false
+      select: null
+    Functional Tail (Prehensile):
+      category: positive
+      removable: false
+      select: null
+    Low-Light Vision:
+      category: positive
+      removable: false
+      select: null
+    Metagenetic Improvement:
+      category: positive
+      removable: false
+      select: AGI
+    Monkey Paws:
+      category: positive
+      removable: false
+      select: null
+    Unusual Hair:
+      category: negative
+      removable: false
+      select: null
+  source: RC
+  source_page: '58'
+  text: Haruman
+Hobgoblin:
+  attribute_racials:
+    CHA: -1
+    EDG: 0
+    GES: 0
+    INT: 0
+    KON: 3
+    LOG: -1
+    REA: 0
+    STR: 2
+    WIL: 0
+  basetype: Ork
+  bp: '20'
+  category: Metavariant
+  improvements: {}
+  movement:
+    fly: null
+    run: 25
+    swim: '5'
+    walk: 10
+  powers: null
+  qualities:
+    Distinctive Style:
+      category: negative
+      removable: false
+      select: null
+    Fangs:
+      category: positive
+      removable: false
+      select: null
+    Low-Light Vision:
+      category: positive
+      removable: false
+      select: null
+    Poor Self Control (Vindictive):
+      category: negative
+      removable: false
+      select: null
+  source: RC
+  source_page: '53'
+  text: Hobgoblin
+Human:
+  attribute_racials:
+    CHA: 0
+    EDG: 1
+    GES: 0
+    INT: 0
+    KON: 0
+    LOG: 0
+    REA: 0
+    STR: 0
+    WIL: 0
+  basetype: Human
+  bp: '0'
+  category: Metahuman
+  improvements: {}
+  movement:
+    fly: null
+    run: 25
+    swim: '5'
+    walk: 10
+  powers: null
+  qualities: {}
+  source: SR4
+  source_page: '89'
+  text: Mensch
+Jaguar Shapeshifter:
+  attribute_racials:
+    CHA: -1
+    EDG: 0
+    GES: 4
+    INT: -1
+    KON: 2
+    LOG: -1
+    REA: 1
+    STR: 1
+    WIL: -1
+  basetype: Jaguar Shapeshifter
+  bp: '65'
+  category: Shapeshifter
+  improvements:
+    metatype.critter:
+      effect: crittertab
+      text: Metatyp
+      type: special
+    metatype.magic:
+      effect: enable_magic
+      text: Metatyp
+      type: special
+  movement:
+    fly: null
+    run: 80
+    swim: null
+    walk: 15
+  powers:
+    Allergy:
+      select: Silver, Severe
+    Dual Natured:
+      select: null
+    Enhanced Senses:
+      select: Hearing, Low Light Vision, Smell
+    Natural Weapon:
+      select: 'Claws/Bite: DV STR/2 + 2, AP 0'
+    Regeneration:
+      select: null
+    Sapience:
+      select: null
+    Vulnerability:
+      select: Silver
+  qualities:
+    Distinctive Style:
+      category: negative
+      removable: false
+      select: null
+  source: RC
+  source_page: '90'
+  text: Jaguar (Gestaltwandler)
+Koborokuru:
+  attribute_racials:
+    CHA: 0
+    EDG: 0
+    GES: 0
+    INT: 0
+    KON: 1
+    LOG: 0
+    REA: -1
+    STR: 2
+    WIL: 1
+  basetype: Dwarf
+  bp: '35'
+  category: Metavariant
+  improvements: {}
+  movement:
+    fly: null
+    run: 20
+    swim: '4'
+    walk: 8
+  powers: null
+  qualities:
+    Celerity:
+      category: positive
+      removable: false
+      select: null
+    Distinctive Style:
+      category: negative
+      removable: false
+      select: null
+    Resistance to Pathogens and Toxins:
+      category: positive
+      removable: false
+      select: null
+    Thermographic Vision:
+      category: positive
+      removable: false
+      select: null
+    Unusual Hair:
+      category: negative
+      removable: false
+      select: null
+  source: RC
+  source_page: '56'
+  text: Koborokuru
+Leopard Shapeshifter:
+  attribute_racials:
+    CHA: -1
+    EDG: 0
+    GES: 4
+    INT: -1
+    KON: 2
+    LOG: -1
+    REA: 1
+    STR: 1
+    WIL: -1
+  basetype: Leopard Shapeshifter
+  bp: '65'
+  category: Shapeshifter
+  improvements:
+    metatype.critter:
+      effect: crittertab
+      text: Metatyp
+      type: special
+    metatype.magic:
+      effect: enable_magic
+      text: Metatyp
+      type: special
+  movement:
+    fly: null
+    run: 80
+    swim: null
+    walk: 15
+  powers:
+    Allergy:
+      select: Silver, Severe
+    Dual Natured:
+      select: null
+    Enhanced Senses:
+      select: Hearing, Low Light Vision, Smell
+    Natural Weapon:
+      select: 'Claws/Bite: DV STR/2 + 2, AP 0'
+    Regeneration:
+      select: null
+    Sapience:
+      select: null
+    Vulnerability:
+      select: Silver
+  qualities:
+    Distinctive Style:
+      category: negative
+      removable: false
+      select: null
+  source: RC
+  source_page: '90'
+  text: Leopard (Gestaltwandler)
+Lion Shapeshifter:
+  attribute_racials:
+    CHA: 0
+    EDG: 0
+    GES: 4
+    INT: -1
+    KON: 3
+    LOG: -1
+    REA: 1
+    STR: 2
+    WIL: -1
+  basetype: Lion Shapeshifter
+  bp: '75'
+  category: Shapeshifter
+  improvements:
+    metatype.critter:
+      effect: crittertab
+      text: Metatyp
+      type: special
+    metatype.magic:
+      effect: enable_magic
+      text: Metatyp
+      type: special
+    metatype.reach:
+      property: reach
+      text: Metatyp
+      type: derived
+      value: 1
+  movement:
+    fly: null
+    run: 50
+    swim: null
+    walk: 15
+  powers:
+    Allergy:
+      select: Silver, Severe
+    Dual Natured:
+      select: null
+    Enhanced Senses:
+      select: Hearing, Low Light Vision, Smell
+    Natural Weapon:
+      select: 'Claws/Bite: DV STR/2 + 2, AP 0'
+    Regeneration:
+      select: null
+    Sapience:
+      select: null
+    Vulnerability:
+      select: Silver
+  qualities:
+    Distinctive Style:
+      category: negative
+      removable: false
+      select: null
+  source: RC
+  source_page: '90'
+  text: "L\xF6we (Gestaltwandler)"
+Menehune:
+  attribute_racials:
+    CHA: 0
+    EDG: 0
+    GES: 0
+    INT: 0
+    KON: 1
+    LOG: 0
+    REA: -1
+    STR: 2
+    WIL: 1
+  basetype: Dwarf
+  bp: '25'
+  category: Metavariant
+  improvements: {}
+  movement:
+    fly: null
+    run: 20
+    swim: '4'
+    walk: 8
+  powers: null
+  qualities:
+    Distinctive Style:
+      category: negative
+      removable: false
+      select: null
+    Resistance to Pathogens and Toxins:
+      category: positive
+      removable: false
+      select: null
+    Thermographic Vision:
+      category: positive
+      removable: false
+      select: null
+    Underwater Vision:
+      category: positive
+      removable: false
+      select: null
+  source: RC
+  source_page: '57'
+  text: Menehune
+Minotaur:
+  attribute_racials:
+    CHA: -2
+    EDG: 0
+    GES: -1
+    INT: -1
+    KON: 4
+    LOG: -1
+    REA: 0
+    STR: 4
+    WIL: 0
+  basetype: Troll
+  bp: '45'
+  category: Metavariant
+  improvements:
+    metatype.armor.ballistic:
+      property: armor_ballistic
+      text: Metatyp
+      type: derived
+      value: 1
+    metatype.armor.impact:
+      property: armor_impact
+      text: Metatyp
+      type: derived
+      value: 1
+    metatype.reach:
+      property: reach
+      text: Metatyp
+      type: derived
+      value: 1
+  movement:
+    fly: null
+    run: 35
+    swim: '7'
+    walk: 15
+  powers: null
+  qualities:
+    Distinctive Style:
+      category: negative
+      removable: false
+      select: null
+    Goring Horns:
+      category: positive
+      removable: false
+      select: null
+    Metagenetic Improvement:
+      category: positive
+      removable: false
+      select: BOD
+    Thermographic Vision:
+      category: positive
+      removable: false
+      select: null
+  source: RC
+  source_page: '60'
+  text: Minotaurus
+Naga:
+  attribute_racials:
+    CHA: 1
+    EDG: -1
+    GES: -2
+    INT: 0
+    KON: 2
+    LOG: 0
+    REA: 1
+    STR: 3
+    WIL: 1
+  basetype: Naga
+  bp: '30'
+  category: Sapient Critter
+  improvements:
+    metatype.critter:
+      effect: crittertab
+      text: Metatyp
+      type: special
+    metatype.lifestylecost:
+      property: cost_increase
+      text: Metatyp
+      type: lifestyle
+      value: 50
+    metatype.magic:
+      effect: enable_magic
+      text: Metatyp
+      type: special
+  movement:
+    fly: null
+    run: 20
+    swim: 8/20
+    walk: 5
+  powers:
+    Armor (Ballistic):
+      select: null
+    Armor (Impact):
+      select: null
+    Dual Natured:
+      select: null
+    Guard:
+      select: null
+    Natural Weapon:
+      select: 'Bite: DV (STR/2)P, AP 0'
+    Sapience:
+      select: null
+    Venom:
+      select: null
+  qualities:
+    Distinctive Style:
+      category: negative
+      removable: false
+      select: null
+    Uneducated:
+      category: negative
+      removable: true
+      select: null
+  source: RC
+  source_page: '88'
+  text: Naga
+Nartaki:
+  attribute_racials:
+    CHA: 0
+    EDG: 1
+    GES: 0
+    INT: 0
+    KON: 0
+    LOG: 0
+    REA: 0
+    STR: 0
+    WIL: 0
+  basetype: Human
+  bp: '25'
+  category: Metavariant
+  improvements: {}
+  movement:
+    fly: null
+    run: 25
+    swim: '5'
+    walk: 10
+  powers: null
+  qualities:
+    Distinctive Style:
+      category: negative
+      removable: false
+      select: null
+    Shiva Arms:
+      category: positive
+      removable: false
+      select: null
+    Striking Skin Pigmentation:
+      category: negative
+      removable: false
+      select: null
+  source: RC
+  source_page: '52'
+  text: Nartaki
+Night One:
+  attribute_racials:
+    CHA: 2
+    EDG: 0
+    GES: 1
+    INT: 0
+    KON: 0
+    LOG: 0
+    REA: 0
+    STR: 0
+    WIL: 0
+  basetype: Elf
+  bp: '35'
+  category: Metavariant
+  improvements: {}
+  movement:
+    fly: null
+    run: 25
+    swim: '6'
+    walk: 10
+  powers: null
+  qualities:
+    Allergy (Common, Mild):
+      category: negative
+      removable: false
+      select: Sunlight
+    Distinctive Style:
+      category: negative
+      removable: false
+      select: null
+    Keen-Eared:
+      category: positive
+      removable: false
+      select: null
+    Low-Light Vision:
+      category: positive
+      removable: false
+      select: null
+    Nocturnal:
+      category: negative
+      removable: false
+      select: null
+    Unusual Hair:
+      category: negative
+      removable: false
+      select: null
+  source: RC
+  source_page: '55'
+  text: "Die N\xE4chtlichen"
+Ogre:
+  attribute_racials:
+    CHA: -1
+    EDG: 0
+    GES: 0
+    INT: 0
+    KON: 3
+    LOG: -1
+    REA: 0
+    STR: 2
+    WIL: 0
+  basetype: Ork
+  bp: '20'
+  category: Metavariant
+  improvements: {}
+  movement:
+    fly: null
+    run: 25
+    swim: '5'
+    walk: 10
+  powers: null
+  qualities:
+    Distinctive Style:
+      category: negative
+      removable: false
+      select: null
+    Low-Light Vision:
+      category: positive
+      removable: false
+      select: null
+    Ogre Stomach:
+      category: positive
+      removable: false
+      select: null
+  source: RC
+  source_page: '53'
+  text: Oger
+Oni:
+  attribute_racials:
+    CHA: -1
+    EDG: 0
+    GES: 0
+    INT: 0
+    KON: 3
+    LOG: -1
+    REA: 0
+    STR: 2
+    WIL: 0
+  basetype: Ork
+  bp: '25'
+  category: Metavariant
+  improvements: {}
+  movement:
+    fly: null
+    run: 25
+    swim: '5'
+    walk: 10
+  powers: null
+  qualities:
+    Distinctive Style:
+      category: negative
+      removable: false
+      select: null
+    Low-Light Vision:
+      category: positive
+      removable: false
+      select: null
+    Striking Skin Pigmentation:
+      category: negative
+      removable: false
+      select: null
+  source: RC
+  source_page: '54'
+  text: Oni
+Ork:
+  attribute_racials:
+    CHA: -1
+    EDG: 0
+    GES: 0
+    INT: 0
+    KON: 3
+    LOG: -1
+    REA: 0
+    STR: 2
+    WIL: 0
+  basetype: Ork
+  bp: '20'
+  category: Metahuman
+  improvements: {}
+  movement:
+    fly: null
+    run: 25
+    swim: '5'
+    walk: 10
+  powers: null
+  qualities:
+    Low-Light Vision:
+      category: positive
+      removable: false
+      select: null
+  source: SR4
+  source_page: '89'
+  text: Ork
+Pixie:
+  attribute_racials:
+    CHA: 2
+    EDG: 1
+    GES: 2
+    INT: 1
+    KON: -3
+    LOG: 1
+    REA: 2
+    STR: -3
+    WIL: 2
+  basetype: Pixie
+  bp: '35'
+  category: Sapient Critter
+  improvements:
+    metatype.critter:
+      effect: crittertab
+      text: Metatyp
+      type: special
+    metatype.lifestylecost:
+      property: cost_increase
+      text: Metatyp
+      type: lifestyle
+      value: 50
+    metatype.magic:
+      effect: enable_magic
+      text: Metatyp
+      type: special
+  movement:
+    fly: 20/50
+    run: 4
+    swim: null
+    walk: 1
+  powers:
+    Concealment:
+      select: null
+    Enhanced Senses:
+      select: Astral Perception
+    Sapience:
+      select: null
+    Vanish:
+      select: null
+  qualities:
+    Distinctive Style:
+      category: negative
+      removable: false
+      select: null
+    Uneducated:
+      category: negative
+      removable: true
+      select: null
+  source: RC
+  source_page: '88'
+  text: Pixie
+Sasquatch:
+  attribute_racials:
+    CHA: 0
+    EDG: -1
+    GES: 0
+    INT: 0
+    KON: 5
+    LOG: 0
+    REA: 0
+    STR: 4
+    WIL: 0
+  basetype: Sasquatch
+  bp: '40'
+  category: Sapient Critter
+  improvements:
+    metatype.critter:
+      effect: crittertab
+      text: Metatyp
+      type: special
+    metatype.lifestylecost:
+      property: cost_increase
+      text: Metatyp
+      type: lifestyle
+      value: 50
+    metatype.magic:
+      effect: enable_magic
+      text: Metatyp
+      type: special
+    metatype.reach:
+      property: reach
+      text: Metatyp
+      type: derived
+      value: 1
+  movement:
+    fly: null
+    run: 35
+    swim: null
+    walk: 15
+  powers:
+    Dual Natured:
+      select: null
+    Mimicry:
+      select: null
+    Sapience:
+      select: null
+  qualities:
+    Distinctive Style:
+      category: negative
+      removable: false
+      select: null
+    Uneducated:
+      category: negative
+      removable: true
+      select: null
+  source: RC
+  source_page: '88'
+  text: Sasquatch
+Satyr:
+  attribute_racials:
+    CHA: -1
+    EDG: 0
+    GES: 0
+    INT: 0
+    KON: 3
+    LOG: -1
+    REA: 0
+    STR: 2
+    WIL: 0
+  basetype: Ork
+  bp: '25'
+  category: Metavariant
+  improvements: {}
+  movement:
+    fly: null
+    run: 25
+    swim: '5'
+    walk: 10
+  powers: null
+  qualities:
+    Distinctive Style:
+      category: negative
+      removable: false
+      select: null
+    Low-Light Vision:
+      category: positive
+      removable: false
+      select: null
+    Satyr Legs:
+      category: positive
+      removable: false
+      select: null
+  source: RC
+  source_page: '54'
+  text: Satyr
+Seal Shapeshifter:
+  attribute_racials:
+    CHA: 0
+    EDG: 0
+    GES: 3
+    INT: 0
+    KON: 3
+    LOG: 0
+    REA: 0
+    STR: 1
+    WIL: -1
+  basetype: Seal Shapeshifter
+  bp: '70'
+  category: Shapeshifter
+  improvements:
+    metatype.critter:
+      effect: crittertab
+      text: Metatyp
+      type: special
+    metatype.magic:
+      effect: enable_magic
+      text: Metatyp
+      type: special
+  movement:
+    fly: null
+    run: 6
+    swim: 8/20
+    walk: 3
+  powers:
+    Allergy:
+      select: Silver, Severe
+    Dual Natured:
+      select: null
+    Enhanced Senses:
+      select: Low Light Vision
+    Natural Weapon:
+      select: 'Claws/Bite: DV STR/2 + 2, AP 0'
+    Regeneration:
+      select: null
+    Sapience:
+      select: null
+    Vulnerability:
+      select: Silver
+  qualities:
+    Distinctive Style:
+      category: negative
+      removable: false
+      select: null
+  source: RC
+  source_page: '90'
+  text: Seehund (Gestaltwandler)
+Tiger Shapeshifter:
+  attribute_racials:
+    CHA: 0
+    EDG: 0
+    GES: 4
+    INT: -1
+    KON: 3
+    LOG: -1
+    REA: 1
+    STR: 2
+    WIL: -1
+  basetype: Tiger Shapeshifter
+  bp: '75'
+  category: Shapeshifter
+  improvements:
+    metatype.critter:
+      effect: crittertab
+      text: Metatyp
+      type: special
+    metatype.magic:
+      effect: enable_magic
+      text: Metatyp
+      type: special
+    metatype.reach:
+      property: reach
+      text: Metatyp
+      type: derived
+      value: 1
+  movement:
+    fly: null
+    run: 50
+    swim: null
+    walk: 15
+  powers:
+    Allergy:
+      select: Silver, Severe
+    Dual Natured:
+      select: null
+    Enhanced Senses:
+      select: Hearing, Low Light Vision, Smell
+    Natural Weapon:
+      select: 'Claws/Bite: DV STR/2 + 2, AP 0'
+    Regeneration:
+      select: null
+    Sapience:
+      select: null
+    Vulnerability:
+      select: Silver
+  qualities:
+    Distinctive Style:
+      category: negative
+      removable: false
+      select: null
+  source: RC
+  source_page: '90'
+  text: Tiger (Gestaltwandler)
+Troll:
+  attribute_racials:
+    CHA: -2
+    EDG: 0
+    GES: -1
+    INT: -1
+    KON: 4
+    LOG: -1
+    REA: 0
+    STR: 4
+    WIL: 0
+  basetype: Troll
+  bp: '40'
+  category: Metahuman
+  improvements:
+    metatype.armor.ballistic:
+      property: armor_ballistic
+      text: Metatyp
+      type: derived
+      value: 1
+    metatype.armor.impact:
+      property: armor_impact
+      text: Metatyp
+      type: derived
+      value: 1
+    metatype.reach:
+      property: reach
+      text: Metatyp
+      type: derived
+      value: 1
+  movement:
+    fly: null
+    run: 35
+    swim: '7'
+    walk: 15
+  powers: null
+  qualities:
+    Thermographic Vision:
+      category: positive
+      removable: false
+      select: null
+  source: SR4
+  source_page: '89'
+  text: Troll
+Wakyambi:
+  attribute_racials:
+    CHA: 2
+    EDG: 0
+    GES: 1
+    INT: 0
+    KON: 0
+    LOG: 0
+    REA: 0
+    STR: 0
+    WIL: 0
+  basetype: Elf
+  bp: '35'
+  category: Metavariant
+  improvements: {}
+  movement:
+    fly: null
+    run: 25
+    swim: '6'
+    walk: 10
+  powers: null
+  qualities:
+    Celerity:
+      category: positive
+      removable: false
+      select: null
+    Distinctive Style:
+      category: negative
+      removable: false
+      select: null
+    Elongated Limbs:
+      category: positive
+      removable: false
+      select: null
+    Low-Light Vision:
+      category: positive
+      removable: false
+      select: null
+  source: RC
+  source_page: '55'
+  text: Wakyambi
+Wolf Shapeshifter:
+  attribute_racials:
+    CHA: 0
+    EDG: 0
+    GES: 0
+    INT: 0
+    KON: 0
+    LOG: 0
+    REA: 0
+    STR: 0
+    WIL: 0
+  basetype: Wolf Shapeshifter
+  bp: '55'
+  category: Shapeshifter
+  improvements:
+    metatype.critter:
+      effect: crittertab
+      text: Metatyp
+      type: special
+    metatype.magic:
+      effect: enable_magic
+      text: Metatyp
+      type: special
+  movement:
+    fly: null
+    run: 50
+    swim: null
+    walk: 15
+  powers:
+    Allergy:
+      select: Silver, Severe
+    Dual Natured:
+      select: null
+    Enhanced Senses:
+      select: Hearing, Low Light Vision, Smell, Taste
+    Natural Weapon:
+      select: 'Claws/Bite: DV STR/2 + 2, AP 0'
+    Regeneration:
+      select: null
+    Sapience:
+      select: null
+    Vulnerability:
+      select: Silver
+  qualities:
+    Distinctive Style:
+      category: negative
+      removable: false
+      select: null
+  source: RC
+  source_page: '90'
+  text: Wolf (Gestaltwandler)
+"Xapiri Th\xEBp\xEB":
+  attribute_racials:
+    CHA: 2
+    EDG: 0
+    GES: 1
+    INT: 0
+    KON: 0
+    LOG: 0
+    REA: 0
+    STR: 0
+    WIL: 0
+  basetype: Elf
+  bp: '40'
+  category: Metavariant
+  improvements: {}
+  movement:
+    fly: null
+    run: 25
+    swim: '6'
+    walk: 10
+  powers: null
+  qualities:
+    Allergy (Uncommon, Mild):
+      category: negative
+      removable: false
+      select: null
+    Distinctive Style:
+      category: negative
+      removable: false
+      select: null
+    Low-Light Vision:
+      category: positive
+      removable: false
+      select: null
+    Photometabolism:
+      category: positive
+      removable: false
+      select: null
+  source: RC
+  source_page: '56'
+  text: "Xapiri Th\xEBp\xEB"
