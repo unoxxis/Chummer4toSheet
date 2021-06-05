@@ -8,8 +8,10 @@ import logging.handlers
 import argparse
 
 # Child Modules
-from sheetwriter import WriteCharacterSheet
-from chumreader import ChummerCharacter, ReadChumFile
+# from sheetwriter import WriteCharacterSheet
+# from chumreader import ChummerCharacter, ReadChumFile
+from chumchar import InitializeChummerCharacter, SaveCharacter
+import pprint
 
 # Global Variables
 with open('VERSION', 'r') as version_file:
@@ -41,8 +43,12 @@ def main(lowres=False, borders=False):
 
     # This is a placeholder to test the main two functions before the UI is ready.
     testfile = 'test/chars/Cassida.chum'
-    char = ChummerCharacter(testfile)
-    WriteCharacterSheet(char, 'test/Cassida.pdf', lowres=lowres, borders=borders)
+    # char = ChummerCharacter(testfile)
+    # WriteCharacterSheet(char, 'test/Cassida.pdf', lowres=lowres, borders=borders)
+
+    testchar = InitializeChummerCharacter()
+    pprint.pprint(testchar)
+    SaveCharacter(testchar, 'test/empty.pychum')
 
 
 
