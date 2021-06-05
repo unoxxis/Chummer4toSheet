@@ -10,7 +10,7 @@ Anaconda Shapeshifter:
     STR: 5
     WIL: 0
   basetype: Anaconda Shapeshifter
-  bp: '60'
+  bp: 60
   category: Shapeshifter
   improvements:
     metatype.critter:
@@ -66,7 +66,7 @@ Bear Shapeshifter:
     STR: 6
     WIL: -1
   basetype: Bear Shapeshifter
-  bp: '80'
+  bp: 80
   category: Shapeshifter
   improvements:
     metatype.critter:
@@ -122,7 +122,7 @@ Centaur:
     STR: 1
     WIL: 0
   basetype: Centaur
-  bp: '30'
+  bp: 30
   category: Sapient Critter
   improvements:
     metatype.critter:
@@ -278,7 +278,7 @@ Dwarf:
     STR: 2
     WIL: 1
   basetype: Dwarf
-  bp: '25'
+  bp: 25
   category: Metahuman
   improvements: {}
   movement:
@@ -307,7 +307,7 @@ Eagle Shapeshifter:
     STR: 0
     WIL: 2
   basetype: Eagle Shapeshifter
-  bp: '60'
+  bp: 60
   category: Shapeshifter
   improvements:
     metatype.critter:
@@ -358,7 +358,7 @@ Elf:
     STR: 0
     WIL: 0
   basetype: Elf
-  bp: '30'
+  bp: 30
   category: Metahuman
   improvements: {}
   movement:
@@ -443,7 +443,7 @@ Fox Shapeshifter:
     STR: -2
     WIL: 0
   basetype: Fox Shapeshifter
-  bp: '50'
+  bp: 50
   category: Shapeshifter
   improvements:
     metatype.critter:
@@ -682,7 +682,7 @@ Human:
     STR: 0
     WIL: 0
   basetype: Human
-  bp: '0'
+  bp: 0
   category: Metahuman
   improvements: {}
   movement:
@@ -707,7 +707,7 @@ Jaguar Shapeshifter:
     STR: 1
     WIL: -1
   basetype: Jaguar Shapeshifter
-  bp: '65'
+  bp: 65
   category: Shapeshifter
   improvements:
     metatype.critter:
@@ -803,7 +803,7 @@ Leopard Shapeshifter:
     STR: 1
     WIL: -1
   basetype: Leopard Shapeshifter
-  bp: '65'
+  bp: 65
   category: Shapeshifter
   improvements:
     metatype.critter:
@@ -854,7 +854,7 @@ Lion Shapeshifter:
     STR: 2
     WIL: -1
   basetype: Lion Shapeshifter
-  bp: '75'
+  bp: 75
   category: Shapeshifter
   improvements:
     metatype.critter:
@@ -1007,7 +1007,7 @@ Naga:
     STR: 3
     WIL: 1
   basetype: Naga
-  bp: '30'
+  bp: 30
   category: Sapient Critter
   improvements:
     metatype.critter:
@@ -1227,7 +1227,7 @@ Ork:
     STR: 2
     WIL: 0
   basetype: Ork
-  bp: '20'
+  bp: 20
   category: Metahuman
   improvements: {}
   movement:
@@ -1256,7 +1256,7 @@ Pixie:
     STR: -3
     WIL: 2
   basetype: Pixie
-  bp: '35'
+  bp: 35
   category: Sapient Critter
   improvements:
     metatype.critter:
@@ -1310,7 +1310,7 @@ Sasquatch:
     STR: 4
     WIL: 0
   basetype: Sasquatch
-  bp: '40'
+  bp: 40
   category: Sapient Critter
   improvements:
     metatype.critter:
@@ -1404,7 +1404,7 @@ Seal Shapeshifter:
     STR: 1
     WIL: -1
   basetype: Seal Shapeshifter
-  bp: '70'
+  bp: 70
   category: Shapeshifter
   improvements:
     metatype.critter:
@@ -1455,7 +1455,7 @@ Tiger Shapeshifter:
     STR: 2
     WIL: -1
   basetype: Tiger Shapeshifter
-  bp: '75'
+  bp: 75
   category: Shapeshifter
   improvements:
     metatype.critter:
@@ -1511,7 +1511,7 @@ Troll:
     STR: 4
     WIL: 0
   basetype: Troll
-  bp: '40'
+  bp: 40
   category: Metahuman
   improvements:
     metatype.armor.ballistic:
@@ -1596,7 +1596,7 @@ Wolf Shapeshifter:
     STR: 0
     WIL: 0
   basetype: Wolf Shapeshifter
-  bp: '55'
+  bp: 55
   category: Shapeshifter
   improvements:
     metatype.critter:

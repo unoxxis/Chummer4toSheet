@@ -89,7 +89,7 @@ if 'metatypes' in GENERATE:
             metatypes[dp.name.cdata]['text'] = tp.translate.cdata
         metatypes[dp.name.cdata]['basetype'] = dp.name.cdata
         metatypes[dp.name.cdata]['category'] = dp.category.cdata
-        metatypes[dp.name.cdata]['bp'] = dp.bp.cdata
+        metatypes[dp.name.cdata]['bp'] = int(dp.bp.cdata)
         metatypes[dp.name.cdata]['source'] = dp.source.cdata
         metatypes[dp.name.cdata]['source_page'] = tp.page.cdata
 
