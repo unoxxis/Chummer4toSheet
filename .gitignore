@@ -135,5 +135,5 @@ dmypy.json
 # FPDF font caches
 *.pkl
 
-# Test PDFs
-test/*.pdf
+# Ignore entire test directory
+test/
