@@ -3,6 +3,9 @@
 import logging
 import yaml
 import copy
+import math
+
+from .improvement_handling import ScanImprovements
 
 
 # Global Data Buffers, will be filled only when required
@@ -67,9 +70,33 @@ def RecalculateCharacter(character):
 
     # Here go: Qualities, Powers, Items, ...
 
-    # Here goes: Improvement Handling
+    # ------------------------------------------------------------------
+    # Calculate Attributes
+    logger.debug('Calculating attributes...')
+    for attr in character['attributes'].keys():
+        if (attr == 'MAG' and not ScanImprovements(character['improvements'], itype='special', ieffect='enable_magic')) \
+            or (attr == 'RES' and not ScanImprovements(character['improvements'], itype='special', ieffect='enable_resonance')):
+            character['attributes'][attr]['augment_max'] = 0
+            character['attributes'][attr]['actual'] = 0
+        # Max Value
+        vmax = 6
+        vmax += character['attributes'][attr].get('racial', 0)
+        vmax += ScanImprovements(character['improvements'], itype='attribute', iattribute=attr, iproperty='augment_max')
 
-    # Here goes: Attributes
+        vmax = int(math.floor(vmax * 1.5))
+        character['attributes'][attr]['augment_max'] = vmax
+
+        # Augmented value
+        vaug = ScanImprovements(character['improvements'], itype='attribute', iattribute=attr, iproperty='augment')
+        character['attributes'][attr]['augment'] = vaug
+
+        # Actual value
+        vact = character['attributes'][attr]['natural'] + character['attributes'][attr].get('racial', 0)
+        vact += vaug
+        if vact > vmax:
+            logger.warning(f"Actual attribute value for {attr} is higher then allowed augmented max!")
+            vact = vmax
+        character['attributes'][attr]['actual'] = vact
 
     # Here goes: Skill calculation
 

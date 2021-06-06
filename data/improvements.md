@@ -16,6 +16,14 @@ Je nach Typ können weitere Felder hinzukommen.
 
 
 # Optionen für das type Feld
+## attribute
+Verändert einen Attributswert des attributs _attribute_ um:
+
+| propery      | Bedeutung
+| ------       | -------
+| augment      | Fügt _value_ zum Attribut hinzu
+| augment_max  | Fügt _value_ zum Maximum hinzu
+
 ## derived
 Verändert einen der abgeleiteten Werte. Welcher genau, steht in einem _property_
 Feld, der Bonus steht im _value_ Feld.

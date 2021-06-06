@@ -10,7 +10,7 @@ import argparse
 # Child Modules
 # from sheetwriter import WriteCharacterSheet
 # from chumreader import ChummerCharacter, ReadChumFile
-from chumchar import ImportChummerCharacter, SaveCharacter
+from chumchar import ImportChummerCharacter, SaveCharacter, RecalculateCharacter
 import pprint
 
 # Global Variables
@@ -48,6 +48,8 @@ def main(lowres=False, borders=False):
 
     testchar = ImportChummerCharacter(testfile)
     # pprint.pprint(testchar)
+    testchar['improvements']['debug.maxges'] = {'type': 'attribute', 'attribute': 'GES', 'property': 'augment_max', 'value': 1, 'text': 'Debug Fiddeling'}
+    testchar = RecalculateCharacter(testchar)
     SaveCharacter(testchar, 'test/Cassida.pychum')
 
 
