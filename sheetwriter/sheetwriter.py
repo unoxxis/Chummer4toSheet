@@ -55,11 +55,13 @@ def WriteCharacterSheet(char, filename, lowres=False, borders=False):
     # logger.info(f"Embedding Background '{sheet_backgrounds['Allgemeines']}'...")
     # pdf.image(sheet_backgrounds['Allgemeines'], x=0, y=0, w=21.0)
 
-    logger.info('Writing Head Block...')
-    WriteBlockHead(pdf, char, ox=0.96, oy=1.30, border=border)
+    xoffs = 0.96
 
-    # logger.info('Writing Attributes Block...')
-    # WriteBlockAttributes(pdf, char, origin=(0.96, 4.15), border=border)
+    logger.info('Writing Head Block...')
+    WriteBlockHead(pdf, char, ox=xoffs, oy=1, border=border)
+
+    logger.info('Writing Attributes Block...')
+    WriteBlockAttributes(pdf, char, ox=xoffs, oy=4, border=border)
 
     pdf.output(name=filename, dest='F')
 

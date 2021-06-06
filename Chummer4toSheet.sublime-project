@@ -4,17 +4,23 @@
 		{
 			"file_exclude_patterns":
 			[
+				"FiraSansCondensed-Bold.pkl",
+				"FiraSansCondensed-SemiBold.pkl",
 				"FiraCode-SemiBold.pkl",
 				"FiraSans-Bold.pkl",
+				"FiraSansCondensed-Black.pkl",
 				"Chummer4toSheet.sublime-workspace",
+				"FiraSans-Black.pkl",
 				"test/Cassida.pdf",
 				"Chummer4toSheet.log",
-				"FiraCode-Regular.pkl",
 				"\"test/Wandler Charakterbogen v21.pdf\"",
+				"FiraCode-Regular.pkl",
+				"test/Cassida.pychum",
 				"FiraSans-SemiBold.pkl",
 				".python-version",
 				"bundle/.python-version",
-				"test/Cassida.pychum",
+				"FiraCode-Bold.pkl",
+				"FiraSansCondensed-Regular.pkl",
 				"FiraSans-Regular.pkl",
 			],
 			"folder_exclude_patterns":

@@ -12,7 +12,7 @@ import chumdata
 box_offset = (-0.15, -0.15)  # Offset of Box for Shadow Reasons
 
 
-def WriteBlockHead(pdf, char, ox=0.0, oy=0.68, border=0):
+def WriteBlockHead(pdf, char, ox=0.96, oy=0.00, border=0):
     """
     Places the general block into the current PDF page.
 
@@ -24,7 +24,7 @@ def WriteBlockHead(pdf, char, ox=0.0, oy=0.68, border=0):
     """
 
     # Logging
-    logger = logging.getLogger('sheetwriter.WriteBlockGeneral')
+    logger = logging.getLogger('sheetwriter.WriteBlockHead')
     logger.debug('Entering Function')
 
     # Box
@@ -34,97 +34,66 @@ def WriteBlockHead(pdf, char, ox=0.0, oy=0.68, border=0):
     rowspc = 0.62
     xmargin = 0.1
     ymargin = 0.1
-    descw = 1.8
+    descw = 2.34
 
     # Left Colum
-    draw_field_label(pdf, x=(ox + xmargin), y=(oy + ymargin + 0.0 * rowspc), w=descw, text='Alias', border=border)
-    draw_field(pdf, 'b90', x=(ox + xmargin + descw), y=(oy + ymargin + 0.0 * rowspc), text=char['alias'], textemph='B', border=border)
+    draw_field_label(pdf, x=(ox + xmargin), y=(oy + ymargin + 0.0 * rowspc), w=descw, text='Straßenname', border=border)
+    draw_field(pdf, 'b80', x=(ox + xmargin + descw), y=(oy + ymargin + 0.0 * rowspc), text=" ".join(char['alias']), textemph='BBB', border=border)
 
     draw_field_label(pdf, x=(ox + xmargin), y=(oy + ymargin + 1.0 * rowspc), w=descw, text='realer Name', border=border)
-    draw_field(pdf, 'b90', x=(ox + xmargin + descw), y=(oy + ymargin + 1.0 * rowspc), text=char['personal']['realname'], border=border)
+    draw_field(pdf, 'b80', x=(ox + xmargin + descw), y=(oy + ymargin + 1.0 * rowspc), text=char['personal']['realname'], border=border)
 
     draw_field_label(pdf, x=(ox + xmargin), y=(oy + ymargin + 2.0 * rowspc), w=descw, text='Rolle', border=border)
-    draw_field(pdf, 'b90', x=(ox + xmargin + descw), y=(oy + ymargin + 2.0 * rowspc), text=char['background']['role'], border=border)
+    draw_field(pdf, 'b80', x=(ox + xmargin + descw), y=(oy + ymargin + 2.0 * rowspc), text=char['background']['role'], border=border)
 
     # Right Colum
-    draw_field_label(pdf, x=(ox + 2.0 * xmargin + descw + 9.0), y=(oy + ymargin + 0.0 * rowspc), w=(19.0 - 3.0 * xmargin - descw - 12.0), text='Metatyp', border=border)
-    # draw_field(pdf, 'b30', x=(ox + 2.0 * xmargin + descw + 9.0 + descw), y=(oy + ymargin + 0.0 * rowspc), text=chumdata.Metatypes[char['metatype']]['text'], border=border)
+    draw_field_label(pdf, x=(ox + 2.0 * xmargin + descw + 8.0), y=(oy + ymargin + 0.0 * rowspc), w=descw, text='Metatyp', border=border)
+    draw_field(pdf, 'b30', x=(ox + 2.0 * xmargin + descw + 8.0 + descw), y=(oy + ymargin + 0.0 * rowspc), text=chumdata.Metatypes[char['metatype']]['text'], textalign='C', border=border)
 
-    draw_field_label(pdf, x=(ox + 2.0 * xmargin + descw + 9.0), y=(oy + ymargin + 1.0 * rowspc), w=descw, text='Alter', border=border)
-    # draw_field(pdf, 'b30', x=(ox + 2.0 * xmargin + descw + 9.0 + descw), y=(oy + ymargin + 1.0 * rowspc), text=char['personal']['age'], border=border)
+    draw_field_label(pdf, x=(ox + 2.0 * xmargin + descw + 8.0), y=(oy + ymargin + 1.0 * rowspc), w=descw, text='Alter', border=border)
+    draw_field(pdf, 'b30', x=(ox + 2.0 * xmargin + descw + 8.0 + descw), y=(oy + ymargin + 1.0 * rowspc), text=char['personal']['age'], textalign='C', border=border)
 
-    # draw_field_label(pdf, x=(ox + 2.0 * xmargin + descw + 9.0), y=(oy + ymargin + 2.0 * rowspc), w=descw, text='Geschlecht', border=border)
-    draw_field(pdf, 'b30', x=(ox + 2.0 * xmargin + 2.0 * descw + 9.0), y=(oy + ymargin + 2.0 * rowspc), text=char['personal']['sex'], border=border)
-
-    return
+    draw_field_label(pdf, x=(ox + 2.0 * xmargin + descw + 8.0), y=(oy + ymargin + 2.0 * rowspc), w=descw, text='Geschlecht', border=border)
+    draw_field(pdf, 'b30', x=(ox + 2.0 * xmargin + 2.0 * descw + 8.0), y=(oy + ymargin + 2.0 * rowspc), text=char['personal']['sex'], textalign='C', border=border)
 
 
-
-    # Geometric Block Data
-    margin = 0.05
-    baselineadjust = 0.05
-    leftcoloffset = (2.14 + margin, 0.14 + baselineadjust)
-    columnoffset = 11.6
-    rowoffset = 0.575
-    leftcellwidth = 9.525 - 2 * margin
-    rightcellwidth = 2.575 - 2 * margin
-    cellheight = 0.49
-
-    # Alias
-    pdf.set_font('Agency FB', 'B', 10)  # Separate Font
-
-    if border > 0:
-        # Draw Origin
-        currpoint = move_point(origin, -0.05, -0.05)
-        pdf.ellipse(*currpoint, 0.1, 0.1, style='F')
-
-    currpoint = move_point(origin, *leftcoloffset)
-    pdf.set_xy(*currpoint)
-    pdf.cell(txt=data['alias'], w=leftcellwidth, h=cellheight, align='C', border=border)
-
-    # Real Name
-    pdf.set_font('Agency FB', '', 10)  # Back to Normal
-
-    currpoint = move_point(currpoint, 0.0, rowoffset)
-    pdf.set_xy(*currpoint)
-    pdf.cell(txt=data['realname'], w=leftcellwidth, h=cellheight, align='L', border=border)
-
-    # Role
-    currpoint = move_point(currpoint, 0.0, rowoffset)
-    pdf.set_xy(*currpoint)
-    pdf.cell(txt=data['role'], w=leftcellwidth, h=cellheight, align='L', border=border)
-
-    # Metatype
-    currpoint = move_point(currpoint, columnoffset, -2.0 * rowoffset)
-    pdf.set_xy(*currpoint)
-    pdf.cell(txt=data['metatype'], w=rightcellwidth, h=cellheight, align='C', border=border)
-
-    # Age
-    currpoint = move_point(currpoint, 0.0, rowoffset)
-    pdf.set_xy(*currpoint)
-    pdf.cell(txt=data['age'], w=rightcellwidth, h=cellheight, align='C', border=border)
-
-    # Sex
-    currpoint = move_point(currpoint, 0.0, rowoffset)
-    pdf.set_xy(*currpoint)
-    pdf.cell(txt=data['sex'], w=rightcellwidth, h=cellheight, align='C', border=border)
-
-
-def WriteBlockAttributes(pdf, char, origin=(0.0, 0.0), border=0):
+def WriteBlockAttributes(pdf, char, ox=0.96, oy=0.00, border=0):
     """
-    Places the general block into the current PDF page.
+    Places the attributes block into the current PDF page.
 
     Parameters:
         pdf (FPDF): PDF writer object
         char (ChummerCharacter): Character to use
-        origin (tuple): Reference Position of the Block.
+        ox, oy (float): Reference Position of the Block, top left corner.
+        border (float): Border width
     """
 
     # Logging
-    logger = logging.getLogger('sheetwriter.WriteBlockGeneral')
+    logger = logging.getLogger('sheetwriter.WriteBlockAttributes')
     logger.debug('Entering Function')
 
-    data = char.GetBlock('attributes')
+    # Box
+    draw_box(pdf, 'h04', ox, oy, 'Attribute', border=border)
+
+    # Geometric Data
+    rowspc = 0.62
+    xmargin = 0.1
+    ymargin = 0.1
+    descw = 2.75
+    lblskip = 0.05
+
+    def Attributebox(x, y, descr, attribvals):
+        draw_field_label(pdf, x=x, y=y, w=descw, text=descr, border=border)
+        for i in range(5):
+            dark = not bool((i + 1) % 4)  # Only third field is dark
+            emph = ''
+            if dark:
+                emph = 'BB'
+            draw_field(pdf, 'b065', x=(x + descw + (0.65 + lblskip) * i), y=y, text=str(attribvals[i]), border=border, textalign='C', textemph=emph, dark=dark)
+
+    Attributebox(ox+0.1, oy+0.1, 'Geschicklichkeit', [0, 1, 2, 3, 10])
+
+    return
 
     # Geometric Block Data
     margin = 0.05
