@@ -8,10 +8,10 @@ import logging.handlers
 import argparse
 
 # Child Modules
-# from sheetwriter import WriteCharacterSheet
-# from chumreader import ChummerCharacter, ReadChumFile
+from sheetwriter import WriteCharacterSheet
 from chumchar import ImportChummerCharacter, SaveCharacter, RecalculateCharacter
-import pprint
+import chumdata
+# import pprint
 
 # Global Variables
 with open('VERSION', 'r') as version_file:
@@ -41,16 +41,19 @@ def main(lowres=False, borders=False):
     logger = logging.getLogger('main')
     logger.debug('Entering Function')
 
+    logger.info('Initialize Global Data...')
+    chumdata.init()
+
     # This is a placeholder to test the main two functions before the UI is ready.
     testfile = 'test/chars/Cassida.chum'
-    # char = ChummerCharacter(testfile)
-    # WriteCharacterSheet(char, 'test/Cassida.pdf', lowres=lowres, borders=borders)
 
     testchar = ImportChummerCharacter(testfile)
     # pprint.pprint(testchar)
     testchar['improvements']['debug.maxges'] = {'type': 'attribute', 'attribute': 'GES', 'property': 'augment_max', 'value': 1, 'text': 'Debug Fiddeling'}
     testchar = RecalculateCharacter(testchar)
     SaveCharacter(testchar, 'test/Cassida.pychum')
+
+    WriteCharacterSheet(testchar, 'test/Cassida.pdf', lowres=lowres, borders=borders)
 
 
 

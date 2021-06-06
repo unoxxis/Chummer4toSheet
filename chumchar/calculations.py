@@ -1,36 +1,12 @@
 # Recalculate Characters
 
 import logging
-import yaml
 import copy
 import math
 
+import chumdata
 from .improvement_handling import ScanImprovements
 
-
-def LoadDataFile(datacategory):
-    """
-    Loads a yaml datafile into the respective global variable.
-
-    Parameters:
-        datacategory (str): Which yaml file to load
-    """
-
-    # Logging
-    logger = logging.getLogger('chumchar.LoadDataFile')
-    logger.debug('Entering Function')
-
-    if datacategory == 'metatypes':
-        yamlfile = f'data/{datacategory}.yaml'
-        with open(yamlfile, mode='r') as fp:
-            global yMetatypes
-            yMetatypes = yaml.safe_load(fp)
-        print(f"Read Data from '{yamlfile}'")
-
-
-# Global Data Buffers, will be filled only when required
-global yMetatypes
-LoadDataFile('metatypes')
 
 
 def RecalculateCharacter(character):
@@ -50,7 +26,7 @@ def RecalculateCharacter(character):
 
     # ------------------------------------------------------------------
     # Racial Improvements
-    for key, improvement in yMetatypes[character['metatype']]['improvements'].items():
+    for key, improvement in chumdata.Metatypes[character['metatype']]['improvements'].items():
         character['improvements'][key] = copy.copy(improvement)
 
     # ------------------------------------------------------------------
@@ -58,7 +34,7 @@ def RecalculateCharacter(character):
     logger.debug('Calculating qualities...')
 
     # Racial Qualities
-    for quality, qdata in yMetatypes[character['metatype']]['qualities'].items():
+    for quality, qdata in chumdata.Metatypes[character['metatype']]['qualities'].items():
         character['qualities'][quality] = copy.copy(qdata)
 
     # ------------------------------------------------------------------
@@ -80,7 +56,7 @@ def RecalculateCharacter(character):
     # Calculate Attributes
     logger.debug('Calculating attributes...')
     for attr in character['attributes'].keys():
-        vrac = yMetatypes[character['metatype']]['attribute_racials'].get(attr, 0)
+        vrac = chumdata.Metatypes[character['metatype']]['attribute_racials'].get(attr, 0)
         character['attributes'][attr]['racial'] = vrac
 
         if (attr == 'MAG' and not ScanImprovements(character['improvements'], itype='special', ieffect='enable_magic')) \
@@ -115,7 +91,7 @@ def RecalculateCharacter(character):
     logger.debug('Calculating derived values...')
 
     # Movement
-    character['derived']['movement'] = copy.deepcopy(yMetatypes[character['metatype']]['movement'])
+    character['derived']['movement'] = copy.deepcopy(chumdata.Metatypes[character['metatype']]['movement'])
 
     # Reach
     character['derived']['reach'] = ScanImprovements(character['improvements'], itype='derived', iproperty='reach')

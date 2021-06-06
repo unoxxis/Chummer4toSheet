@@ -4,19 +4,25 @@
 		{
 			"file_exclude_patterns":
 			[
+				"FiraCode-SemiBold.pkl",
+				"FiraSans-Bold.pkl",
 				"Chummer4toSheet.sublime-workspace",
-				"AGENCYR.pkl",
-				"Chummer4toSheet.log",
 				"test/Cassida.pdf",
+				"Chummer4toSheet.log",
+				"FiraCode-Regular.pkl",
 				"\"test/Wandler Charakterbogen v21.pdf\"",
+				"FiraSans-SemiBold.pkl",
 				".python-version",
 				"bundle/.python-version",
-				"AGENCYB.pkl",
 				"test/Cassida.pychum",
+				"FiraSans-Regular.pkl",
 			],
 			"folder_exclude_patterns":
 			[
 				"chumchar/__pycache__",
+				"__pycache__",
+				"test/font_store",
+				"data/__pycache__",
 				"sheetwriter/__pycache__",
 			],
 			"path": ".",
@@ -41,7 +47,7 @@
 		},
 		{
 			"name": "Convert Chummer XML Data",
-			"working_dir": "${project_path}/data",
+			"working_dir": "${project_path}/chumdata",
 			"shell_cmd": "\"python\" -u \"chummer_convert.py\"",
 		},
 		{

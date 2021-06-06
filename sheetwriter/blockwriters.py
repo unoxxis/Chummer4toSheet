@@ -1,27 +1,64 @@
 # Block Writer Routines
-# Author: Boris Wezisla
 
 import logging
 from fpdf import FPDF
 
 from .geom_util import move_point, draw_cross
+from .geom_util import draw_field, draw_box, draw_field_label
+
+import chumdata
+
+# Globals
+box_offset = (-0.15, -0.15)  # Offset of Box for Shadow Reasons
 
 
-def WriteBlockGeneral(pdf, char, origin=(0.0, 0.0), border=0):
+def WriteBlockHead(pdf, char, ox=0.0, oy=0.68, border=0):
     """
     Places the general block into the current PDF page.
 
     Parameters:
         pdf (FPDF): PDF writer object
         char (ChummerCharacter): Character to use
-        origin (tuple): Reference Position of the Block.
+        ox, oy (float): Reference Position of the Block, top left corner.
+        border (float): Border width
     """
 
     # Logging
     logger = logging.getLogger('sheetwriter.WriteBlockGeneral')
     logger.debug('Entering Function')
 
-    data = char.GetBlock('general')
+    # Box
+    draw_box(pdf, 'h03_logo', ox, oy, 'Allgemeines', border=border)
+
+    # Geometric Data
+    rowspc = 0.62
+    xmargin = 0.1
+    ymargin = 0.1
+    descw = 1.8
+
+    # Left Colum
+    draw_field_label(pdf, x=(ox + xmargin), y=(oy + ymargin + 0.0 * rowspc), w=descw, text='Alias', border=border)
+    draw_field(pdf, 'b90', x=(ox + xmargin + descw), y=(oy + ymargin + 0.0 * rowspc), text=char['alias'], textemph='B', border=border)
+
+    draw_field_label(pdf, x=(ox + xmargin), y=(oy + ymargin + 1.0 * rowspc), w=descw, text='realer Name', border=border)
+    draw_field(pdf, 'b90', x=(ox + xmargin + descw), y=(oy + ymargin + 1.0 * rowspc), text=char['personal']['realname'], border=border)
+
+    draw_field_label(pdf, x=(ox + xmargin), y=(oy + ymargin + 2.0 * rowspc), w=descw, text='Rolle', border=border)
+    draw_field(pdf, 'b90', x=(ox + xmargin + descw), y=(oy + ymargin + 2.0 * rowspc), text=char['background']['role'], border=border)
+
+    # Right Colum
+    draw_field_label(pdf, x=(ox + 2.0 * xmargin + descw + 9.0), y=(oy + ymargin + 0.0 * rowspc), w=(19.0 - 3.0 * xmargin - descw - 12.0), text='Metatyp', border=border)
+    # draw_field(pdf, 'b30', x=(ox + 2.0 * xmargin + descw + 9.0 + descw), y=(oy + ymargin + 0.0 * rowspc), text=chumdata.Metatypes[char['metatype']]['text'], border=border)
+
+    draw_field_label(pdf, x=(ox + 2.0 * xmargin + descw + 9.0), y=(oy + ymargin + 1.0 * rowspc), w=descw, text='Alter', border=border)
+    # draw_field(pdf, 'b30', x=(ox + 2.0 * xmargin + descw + 9.0 + descw), y=(oy + ymargin + 1.0 * rowspc), text=char['personal']['age'], border=border)
+
+    # draw_field_label(pdf, x=(ox + 2.0 * xmargin + descw + 9.0), y=(oy + ymargin + 2.0 * rowspc), w=descw, text='Geschlecht', border=border)
+    draw_field(pdf, 'b30', x=(ox + 2.0 * xmargin + 2.0 * descw + 9.0), y=(oy + ymargin + 2.0 * rowspc), text=char['personal']['sex'], border=border)
+
+    return
+
+
 
     # Geometric Block Data
     margin = 0.05

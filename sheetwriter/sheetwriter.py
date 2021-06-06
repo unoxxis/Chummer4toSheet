@@ -6,15 +6,7 @@ from fpdf import FPDF
 
 # Blockwriters
 from .blockwriters import *
-
-
-sheets_highres = {
-    'Allgemeines': 'sheets/Allgemeines.png'
-}
-
-sheets_lowres = {
-    'Allgemeines': 'sheets/Allgemeines_LowRes.png'
-}
+from .geom_util import LoadAssets, LoadFonts
 
 
 def WriteCharacterSheet(char, filename, lowres=False, borders=False):
@@ -22,21 +14,15 @@ def WriteCharacterSheet(char, filename, lowres=False, borders=False):
     Writes the character sheet of a character to a PDF file.
 
     Parameters:
-        char (ChummerCharacter): Character to use
+        char (dict): Character dictionary to use
         filename (str): file path
         lowres (bool): Whether to use thumbnail backgrounds for debugging.
+        borders (bool): Whether to draw borders around blocks
     """
 
     # Logging
     logger = logging.getLogger('sheetwriter.WriteCharacterSheet')
     logger.debug('Entering Function')
-
-    # Determine Image Path
-    if lowres:
-        logger.debug('Using low resolution backgrounds.')
-        sheet_backgrounds = sheets_lowres
-    else:
-        sheet_backgrounds = sheets_highres
 
     # Determine Border Parameter for blockwriters
     if borders:
@@ -49,9 +35,11 @@ def WriteCharacterSheet(char, filename, lowres=False, borders=False):
     # Initialize PDF Writer
     pdf = FPDF(orientation='P', unit='cm', format='A4')
 
+    # Get correct assets set
+    LoadAssets(lowres)
+
     # Load Fonts
-    pdf.add_font('Agency FB', '', fname='sheets/res/AGENCYR.TTF', uni=True)
-    pdf.add_font('Agency FB', 'B', fname='sheets/res/AGENCYB.TTF', uni=True)
+    LoadFonts(pdf)
 
     if borders:
         # Set bordercolor to red
@@ -64,14 +52,14 @@ def WriteCharacterSheet(char, filename, lowres=False, borders=False):
     logger.info(f'New Page {currpage}:')
 
     # Background
-    logger.info(f"Embedding Background '{sheet_backgrounds['Allgemeines']}'...")
-    pdf.image(sheet_backgrounds['Allgemeines'], x=0, y=0, w=21.0)
+    # logger.info(f"Embedding Background '{sheet_backgrounds['Allgemeines']}'...")
+    # pdf.image(sheet_backgrounds['Allgemeines'], x=0, y=0, w=21.0)
 
-    logger.info('Writing General Block...')
-    WriteBlockGeneral(pdf, char, origin=(0.96, 1.30), border=border)
+    logger.info('Writing Head Block...')
+    WriteBlockHead(pdf, char, ox=0.96, oy=1.30, border=border)
 
-    logger.info('Writing Attributes Block...')
-    WriteBlockAttributes(pdf, char, origin=(0.96, 4.15), border=border)
+    # logger.info('Writing Attributes Block...')
+    # WriteBlockAttributes(pdf, char, origin=(0.96, 4.15), border=border)
 
     pdf.output(name=filename, dest='F')
 
