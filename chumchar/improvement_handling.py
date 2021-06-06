@@ -35,6 +35,14 @@ def ScanImprovements(improvements, itype=None, iproperty=None, iattribute=None, 
                 if impr['property'] == iproperty and impr['attribute'] == iattribute:
                     retval += impr['value']
                     text += f"{impr['value']:+d} ({impr['text']})\n"
+    elif itype == 'derived':
+        # Get Attribute Modifiers:
+        retval = 0
+        for key, impr in improvements.items():
+            if impr['type'] == itype:
+                if impr['property'] == iproperty:
+                    retval += impr['value']
+                    text += f"{impr['value']:+d} ({impr['text']})\n"
     elif itype == 'special':
         retval = False
         for key, impr in improvements.items():

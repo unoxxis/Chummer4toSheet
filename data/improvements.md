@@ -21,8 +21,8 @@ Verändert einen Attributswert des attributs _attribute_ um:
 
 | propery      | Bedeutung
 | ------       | -------
-| augment      | Fügt _value_ zum Attribut hinzu
-| augment_max  | Fügt _value_ zum Maximum hinzu
+| augment      | Fügt _value_ zum Attribut hinzu  **IN**
+| augment_max  | Fügt _value_ zum Maximum hinzu   **IN**
 
 ## derived
 Verändert einen der abgeleiteten Werte. Welcher genau, steht in einem _property_

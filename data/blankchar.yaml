@@ -27,6 +27,10 @@ attributes:
 essence:
   reference: 6
 derived:
+  reach: 0
+  armor:
+    ballistic: 0
+    impact: 0
   movement:
     walk: 10
     run: 25
