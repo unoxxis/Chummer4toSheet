@@ -121,7 +121,10 @@ if 'metatypes' in GENERATE:
         if match:  # has swim or Fly
             metatypes[dp.name.cdata]['movement']['walk'] = int(match.group(1))
             metatypes[dp.name.cdata]['movement']['run'] = int(match.group(2))
-            metatypes[dp.name.cdata]['movement'][match.group(3).lower()] = match.group(4)
+            if match.group(4).find('/') == -1:  # only one value for alternative movements
+                metatypes[dp.name.cdata]['movement'][match.group(3).lower()] = int(match.group(4))
+            else:  # Walk and run for alternative Movement
+                metatypes[dp.name.cdata]['movement'][match.group(3).lower()] = match.group(4)
         match = re.search(r'(\d+)/(\d+)', dp.movement.cdata)
         if match:  # does not swim or Fly
             metatypes[dp.name.cdata]['movement']['walk'] = int(match.group(1))
@@ -135,6 +138,7 @@ if 'metatypes' in GENERATE:
                     metatypes[dp.name.cdata]['qualities'][pq.cdata] = {
                         'removable': bool(strtobool(pq._attributes.get('removable', 'false'))),
                         'select': pq._attributes.get('select', None),
+                        'innate': True,
                         'category': 'positive'
                     }
             if hasattr(dp.qualities, 'negative'):
@@ -142,6 +146,7 @@ if 'metatypes' in GENERATE:
                     metatypes[dp.name.cdata]['qualities'][pq.cdata] = {
                         'removable': bool(strtobool(pq._attributes.get('removable', 'false'))),
                         'select': pq._attributes.get('select', None),
+                        'innate': True,
                         'category': 'negative'
                     }
 
@@ -151,6 +156,7 @@ if 'metatypes' in GENERATE:
             for pw in dp.powers.power:
                 metatypes[dp.name.cdata]['powers'][pw.cdata] = {
                     'select': pw._attributes.get('select', None),
+                    'innate': True,
                 }
         else:
             metatypes[dp.name.cdata]['powers'] = None
@@ -163,12 +169,14 @@ if 'metatypes' in GENERATE:
                     if dp.bonus.addattribute.name.cdata == 'MAG':
                         metatypes[dp.name.cdata]['improvements']['metatype.magic'] = {
                             'type': 'special',
+                            'innate': True,
                             'text': 'Metatyp',
                             'effect': 'enable_magic'
                         }
                     elif dp.bonus.addattribute.name.cdata == 'RES':
                         metatypes[dp.name.cdata]['improvements']['metatype.resonance'] = {
                             'type': 'special',
+                            'innate': True,
                             'text': 'Metatyp',
                             'effect': 'enable_resonance'
                         }
@@ -178,6 +186,7 @@ if 'metatypes' in GENERATE:
                     if dp.bonus.enabletab.name.cdata == 'critter':
                         metatypes[dp.name.cdata]['improvements']['metatype.critter'] = {
                             'type': 'special',
+                            'innate': True,
                             'text': 'Metatyp',
                             'effect': 'crittertab'
                         }
@@ -186,6 +195,7 @@ if 'metatypes' in GENERATE:
                 elif bn._name == 'reach':
                     metatypes[dp.name.cdata]['improvements']['metatype.reach'] = {
                         'type': 'derived',
+                        'innate': True,
                         'text': 'Metatyp',
                         'property': 'reach',
                         'value': int(dp.bonus.reach.cdata)
@@ -193,12 +203,14 @@ if 'metatypes' in GENERATE:
                 elif bn._name == 'armor':
                     metatypes[dp.name.cdata]['improvements']['metatype.armor.ballistic'] = {
                         'type': 'derived',
+                        'innate': True,
                         'text': 'Metatyp',
                         'property': 'armor_ballistic',
                         'value': int(dp.bonus.armor.b.cdata)
                     }
                     metatypes[dp.name.cdata]['improvements']['metatype.armor.impact'] = {
                         'type': 'derived',
+                        'innate': True,
                         'text': 'Metatyp',
                         'property': 'armor_impact',
                         'value': int(dp.bonus.armor.i.cdata)
@@ -206,6 +218,7 @@ if 'metatypes' in GENERATE:
                 elif bn._name == 'lifestylecost':
                     metatypes[dp.name.cdata]['improvements']['metatype.lifestylecost'] = {
                         'type': 'lifestyle',
+                        'innate': True,
                         'text': 'Metatyp',
                         'property': 'cost_increase',
                         'value': int(dp.bonus.lifestylecost.cdata)

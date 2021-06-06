@@ -15,13 +15,16 @@ Anaconda Shapeshifter:
   improvements:
     metatype.critter:
       effect: crittertab
+      innate: true
       text: Metatyp
       type: special
     metatype.magic:
       effect: enable_magic
+      innate: true
       text: Metatyp
       type: special
     metatype.reach:
+      innate: true
       property: reach
       text: Metatyp
       type: derived
@@ -33,22 +36,30 @@ Anaconda Shapeshifter:
     walk: 5
   powers:
     Allergy:
+      innate: true
       select: Silver, Severe
     Dual Natured:
+      innate: true
       select: null
     Enhanced Senses:
+      innate: true
       select: Thermal
     Natural Weapon:
+      innate: true
       select: 'Bite: DV STR/2 + 2, AP 0'
     Regeneration:
+      innate: true
       select: null
     Sapience:
+      innate: true
       select: null
     Vulnerability:
+      innate: true
       select: Silver
   qualities:
     Distinctive Style:
       category: negative
+      innate: true
       removable: false
       select: null
   source: CI
@@ -71,13 +82,16 @@ Bear Shapeshifter:
   improvements:
     metatype.critter:
       effect: crittertab
+      innate: true
       text: Metatyp
       type: special
     metatype.magic:
       effect: enable_magic
+      innate: true
       text: Metatyp
       type: special
     metatype.reach:
+      innate: true
       property: reach
       text: Metatyp
       type: derived
@@ -89,22 +103,30 @@ Bear Shapeshifter:
     walk: 15
   powers:
     Allergy:
+      innate: true
       select: Silver, Severe
     Dual Natured:
+      innate: true
       select: null
     Enhanced Senses:
+      innate: true
       select: Smell
     Natural Weapon:
+      innate: true
       select: 'Claws/Bite: DV STR/2 + 2, AP 0'
     Regeneration:
+      innate: true
       select: null
     Sapience:
+      innate: true
       select: null
     Vulnerability:
+      innate: true
       select: Silver
   qualities:
     Distinctive Style:
       category: negative
+      innate: true
       removable: false
       select: null
   source: RC
@@ -127,18 +149,22 @@ Centaur:
   improvements:
     metatype.critter:
       effect: crittertab
+      innate: true
       text: Metatyp
       type: special
     metatype.lifestylecost:
+      innate: true
       property: cost_increase
       text: Metatyp
       type: lifestyle
       value: 50
     metatype.magic:
       effect: enable_magic
+      innate: true
       text: Metatyp
       type: special
     metatype.reach:
+      innate: true
       property: reach
       text: Metatyp
       type: derived
@@ -150,24 +176,31 @@ Centaur:
     walk: 20
   powers:
     Enhanced Senses:
+      innate: true
       select: Low-Light Vision, Thermographic Vision
     Magic Sense:
+      innate: true
       select: null
     Natural Weapon:
+      innate: true
       select: 'Kick: DV (STR/2)P, AP 0'
     Sapience:
+      innate: true
       select: null
   qualities:
     Distinctive Style:
       category: negative
+      innate: true
       removable: false
       select: null
     Uncouth:
       category: negative
+      innate: true
       removable: true
       select: null
     Uneducated:
       category: negative
+      innate: true
       removable: true
       select: null
   source: RC
@@ -189,16 +222,19 @@ Cyclops:
   category: Metavariant
   improvements:
     metatype.armor.ballistic:
+      innate: true
       property: armor_ballistic
       text: Metatyp
       type: derived
       value: 1
     metatype.armor.impact:
+      innate: true
       property: armor_impact
       text: Metatyp
       type: derived
       value: 1
     metatype.reach:
+      innate: true
       property: reach
       text: Metatyp
       type: derived
@@ -206,7 +242,7 @@ Cyclops:
   movement:
     fly: null
     run: 35
-    swim: '7'
+    swim: 7
     walk: 15
   powers: null
   qualities:
@@ -243,7 +279,7 @@ Dryad:
   movement:
     fly: null
     run: 25
-    swim: '6'
+    swim: 6
     walk: 10
   powers: null
   qualities:
@@ -284,12 +320,13 @@ Dwarf:
   movement:
     fly: null
     run: 20
-    swim: '4'
+    swim: 4
     walk: 8
   powers: null
   qualities:
     Thermographic Vision:
       category: positive
+      innate: true
       removable: false
       select: null
   source: SR4
@@ -312,10 +349,12 @@ Eagle Shapeshifter:
   improvements:
     metatype.critter:
       effect: crittertab
+      innate: true
       text: Metatyp
       type: special
     metatype.magic:
       effect: enable_magic
+      innate: true
       text: Metatyp
       type: special
   movement:
@@ -325,22 +364,30 @@ Eagle Shapeshifter:
     walk: 3
   powers:
     Allergy:
+      innate: true
       select: Silver, Severe
     Dual Natured:
+      innate: true
       select: null
     Enhanced Senses:
+      innate: true
       select: Vision Enhancement (2), Vision Magnification
     Natural Weapon:
+      innate: true
       select: 'Claws/Bite: DV STR/2 + 2, AP 0'
     Regeneration:
+      innate: true
       select: null
     Sapience:
+      innate: true
       select: null
     Vulnerability:
+      innate: true
       select: Silver
   qualities:
     Distinctive Style:
       category: negative
+      innate: true
       removable: false
       select: null
   source: RC
@@ -364,12 +411,13 @@ Elf:
   movement:
     fly: null
     run: 25
-    swim: '6'
+    swim: 6
     walk: 10
   powers: null
   qualities:
     Low-Light Vision:
       category: positive
+      innate: true
       removable: false
       select: null
   source: SR4
@@ -391,16 +439,19 @@ Fomori:
   category: Metavariant
   improvements:
     metatype.armor.ballistic:
+      innate: true
       property: armor_ballistic
       text: Metatyp
       type: derived
       value: 1
     metatype.armor.impact:
+      innate: true
       property: armor_impact
       text: Metatyp
       type: derived
       value: 1
     metatype.reach:
+      innate: true
       property: reach
       text: Metatyp
       type: derived
@@ -408,7 +459,7 @@ Fomori:
   movement:
     fly: null
     run: 35
-    swim: '7'
+    swim: 7
     walk: 15
   powers: null
   qualities:
@@ -448,13 +499,16 @@ Fox Shapeshifter:
   improvements:
     metatype.critter:
       effect: crittertab
+      innate: true
       text: Metatyp
       type: special
     metatype.magic:
       effect: enable_magic
+      innate: true
       text: Metatyp
       type: special
     metatype.reach:
+      innate: true
       property: reach
       text: Metatyp
       type: derived
@@ -466,22 +520,30 @@ Fox Shapeshifter:
     walk: 12
   powers:
     Allergy:
+      innate: true
       select: Silver, Severe
     Dual Natured:
+      innate: true
       select: null
     Enhanced Senses:
+      innate: true
       select: Hearing, Low Light Vision, Smell, Taste
     Natural Weapon:
+      innate: true
       select: 'Claws/Bite: DV STR/2 + 2, AP 0'
     Regeneration:
+      innate: true
       select: null
     Sapience:
+      innate: true
       select: null
     Vulnerability:
+      innate: true
       select: Silver
   qualities:
     Distinctive Style:
       category: negative
+      innate: true
       removable: false
       select: null
   source: RC
@@ -503,16 +565,19 @@ Giant:
   category: Metavariant
   improvements:
     metatype.armor.ballistic:
+      innate: true
       property: armor_ballistic
       text: Metatyp
       type: derived
       value: 1
     metatype.armor.impact:
+      innate: true
       property: armor_impact
       text: Metatyp
       type: derived
       value: 1
     metatype.reach:
+      innate: true
       property: reach
       text: Metatyp
       type: derived
@@ -520,7 +585,7 @@ Giant:
   movement:
     fly: null
     run: 35
-    swim: '7'
+    swim: 7
     walk: 15
   powers: null
   qualities:
@@ -557,7 +622,7 @@ Gnome:
   movement:
     fly: null
     run: 20
-    swim: '4'
+    swim: 4
     walk: 8
   powers: null
   qualities:
@@ -598,7 +663,7 @@ Haruman:
   movement:
     fly: null
     run: 20
-    swim: '4'
+    swim: 4
     walk: 8
   powers: null
   qualities:
@@ -647,7 +712,7 @@ Hobgoblin:
   movement:
     fly: null
     run: 25
-    swim: '5'
+    swim: 5
     walk: 10
   powers: null
   qualities:
@@ -688,7 +753,7 @@ Human:
   movement:
     fly: null
     run: 25
-    swim: '5'
+    swim: 5
     walk: 10
   powers: null
   qualities: {}
@@ -712,10 +777,12 @@ Jaguar Shapeshifter:
   improvements:
     metatype.critter:
       effect: crittertab
+      innate: true
       text: Metatyp
       type: special
     metatype.magic:
       effect: enable_magic
+      innate: true
       text: Metatyp
       type: special
   movement:
@@ -725,22 +792,30 @@ Jaguar Shapeshifter:
     walk: 15
   powers:
     Allergy:
+      innate: true
       select: Silver, Severe
     Dual Natured:
+      innate: true
       select: null
     Enhanced Senses:
+      innate: true
       select: Hearing, Low Light Vision, Smell
     Natural Weapon:
+      innate: true
       select: 'Claws/Bite: DV STR/2 + 2, AP 0'
     Regeneration:
+      innate: true
       select: null
     Sapience:
+      innate: true
       select: null
     Vulnerability:
+      innate: true
       select: Silver
   qualities:
     Distinctive Style:
       category: negative
+      innate: true
       removable: false
       select: null
   source: RC
@@ -764,7 +839,7 @@ Koborokuru:
   movement:
     fly: null
     run: 20
-    swim: '4'
+    swim: 4
     walk: 8
   powers: null
   qualities:
@@ -808,10 +883,12 @@ Leopard Shapeshifter:
   improvements:
     metatype.critter:
       effect: crittertab
+      innate: true
       text: Metatyp
       type: special
     metatype.magic:
       effect: enable_magic
+      innate: true
       text: Metatyp
       type: special
   movement:
@@ -821,22 +898,30 @@ Leopard Shapeshifter:
     walk: 15
   powers:
     Allergy:
+      innate: true
       select: Silver, Severe
     Dual Natured:
+      innate: true
       select: null
     Enhanced Senses:
+      innate: true
       select: Hearing, Low Light Vision, Smell
     Natural Weapon:
+      innate: true
       select: 'Claws/Bite: DV STR/2 + 2, AP 0'
     Regeneration:
+      innate: true
       select: null
     Sapience:
+      innate: true
       select: null
     Vulnerability:
+      innate: true
       select: Silver
   qualities:
     Distinctive Style:
       category: negative
+      innate: true
       removable: false
       select: null
   source: RC
@@ -859,13 +944,16 @@ Lion Shapeshifter:
   improvements:
     metatype.critter:
       effect: crittertab
+      innate: true
       text: Metatyp
       type: special
     metatype.magic:
       effect: enable_magic
+      innate: true
       text: Metatyp
       type: special
     metatype.reach:
+      innate: true
       property: reach
       text: Metatyp
       type: derived
@@ -877,22 +965,30 @@ Lion Shapeshifter:
     walk: 15
   powers:
     Allergy:
+      innate: true
       select: Silver, Severe
     Dual Natured:
+      innate: true
       select: null
     Enhanced Senses:
+      innate: true
       select: Hearing, Low Light Vision, Smell
     Natural Weapon:
+      innate: true
       select: 'Claws/Bite: DV STR/2 + 2, AP 0'
     Regeneration:
+      innate: true
       select: null
     Sapience:
+      innate: true
       select: null
     Vulnerability:
+      innate: true
       select: Silver
   qualities:
     Distinctive Style:
       category: negative
+      innate: true
       removable: false
       select: null
   source: RC
@@ -916,7 +1012,7 @@ Menehune:
   movement:
     fly: null
     run: 20
-    swim: '4'
+    swim: 4
     walk: 8
   powers: null
   qualities:
@@ -955,16 +1051,19 @@ Minotaur:
   category: Metavariant
   improvements:
     metatype.armor.ballistic:
+      innate: true
       property: armor_ballistic
       text: Metatyp
       type: derived
       value: 1
     metatype.armor.impact:
+      innate: true
       property: armor_impact
       text: Metatyp
       type: derived
       value: 1
     metatype.reach:
+      innate: true
       property: reach
       text: Metatyp
       type: derived
@@ -972,7 +1071,7 @@ Minotaur:
   movement:
     fly: null
     run: 35
-    swim: '7'
+    swim: 7
     walk: 15
   powers: null
   qualities:
@@ -1012,15 +1111,18 @@ Naga:
   improvements:
     metatype.critter:
       effect: crittertab
+      innate: true
       text: Metatyp
       type: special
     metatype.lifestylecost:
+      innate: true
       property: cost_increase
       text: Metatyp
       type: lifestyle
       value: 50
     metatype.magic:
       effect: enable_magic
+      innate: true
       text: Metatyp
       type: special
   movement:
@@ -1030,26 +1132,35 @@ Naga:
     walk: 5
   powers:
     Armor (Ballistic):
+      innate: true
       select: null
     Armor (Impact):
+      innate: true
       select: null
     Dual Natured:
+      innate: true
       select: null
     Guard:
+      innate: true
       select: null
     Natural Weapon:
+      innate: true
       select: 'Bite: DV (STR/2)P, AP 0'
     Sapience:
+      innate: true
       select: null
     Venom:
+      innate: true
       select: null
   qualities:
     Distinctive Style:
       category: negative
+      innate: true
       removable: false
       select: null
     Uneducated:
       category: negative
+      innate: true
       removable: true
       select: null
   source: RC
@@ -1073,7 +1184,7 @@ Nartaki:
   movement:
     fly: null
     run: 25
-    swim: '5'
+    swim: 5
     walk: 10
   powers: null
   qualities:
@@ -1110,7 +1221,7 @@ Night One:
   movement:
     fly: null
     run: 25
-    swim: '6'
+    swim: 6
     walk: 10
   powers: null
   qualities:
@@ -1159,7 +1270,7 @@ Ogre:
   movement:
     fly: null
     run: 25
-    swim: '5'
+    swim: 5
     walk: 10
   powers: null
   qualities:
@@ -1196,7 +1307,7 @@ Oni:
   movement:
     fly: null
     run: 25
-    swim: '5'
+    swim: 5
     walk: 10
   powers: null
   qualities:
@@ -1233,12 +1344,13 @@ Ork:
   movement:
     fly: null
     run: 25
-    swim: '5'
+    swim: 5
     walk: 10
   powers: null
   qualities:
     Low-Light Vision:
       category: positive
+      innate: true
       removable: false
       select: null
   source: SR4
@@ -1261,15 +1373,18 @@ Pixie:
   improvements:
     metatype.critter:
       effect: crittertab
+      innate: true
       text: Metatyp
       type: special
     metatype.lifestylecost:
+      innate: true
       property: cost_increase
       text: Metatyp
       type: lifestyle
       value: 50
     metatype.magic:
       effect: enable_magic
+      innate: true
       text: Metatyp
       type: special
   movement:
@@ -1279,20 +1394,26 @@ Pixie:
     walk: 1
   powers:
     Concealment:
+      innate: true
       select: null
     Enhanced Senses:
+      innate: true
       select: Astral Perception
     Sapience:
+      innate: true
       select: null
     Vanish:
+      innate: true
       select: null
   qualities:
     Distinctive Style:
       category: negative
+      innate: true
       removable: false
       select: null
     Uneducated:
       category: negative
+      innate: true
       removable: true
       select: null
   source: RC
@@ -1315,18 +1436,22 @@ Sasquatch:
   improvements:
     metatype.critter:
       effect: crittertab
+      innate: true
       text: Metatyp
       type: special
     metatype.lifestylecost:
+      innate: true
       property: cost_increase
       text: Metatyp
       type: lifestyle
       value: 50
     metatype.magic:
       effect: enable_magic
+      innate: true
       text: Metatyp
       type: special
     metatype.reach:
+      innate: true
       property: reach
       text: Metatyp
       type: derived
@@ -1338,18 +1463,23 @@ Sasquatch:
     walk: 15
   powers:
     Dual Natured:
+      innate: true
       select: null
     Mimicry:
+      innate: true
       select: null
     Sapience:
+      innate: true
       select: null
   qualities:
     Distinctive Style:
       category: negative
+      innate: true
       removable: false
       select: null
     Uneducated:
       category: negative
+      innate: true
       removable: true
       select: null
   source: RC
@@ -1373,7 +1503,7 @@ Satyr:
   movement:
     fly: null
     run: 25
-    swim: '5'
+    swim: 5
     walk: 10
   powers: null
   qualities:
@@ -1409,10 +1539,12 @@ Seal Shapeshifter:
   improvements:
     metatype.critter:
       effect: crittertab
+      innate: true
       text: Metatyp
       type: special
     metatype.magic:
       effect: enable_magic
+      innate: true
       text: Metatyp
       type: special
   movement:
@@ -1422,22 +1554,30 @@ Seal Shapeshifter:
     walk: 3
   powers:
     Allergy:
+      innate: true
       select: Silver, Severe
     Dual Natured:
+      innate: true
       select: null
     Enhanced Senses:
+      innate: true
       select: Low Light Vision
     Natural Weapon:
+      innate: true
       select: 'Claws/Bite: DV STR/2 + 2, AP 0'
     Regeneration:
+      innate: true
       select: null
     Sapience:
+      innate: true
       select: null
     Vulnerability:
+      innate: true
       select: Silver
   qualities:
     Distinctive Style:
       category: negative
+      innate: true
       removable: false
       select: null
   source: RC
@@ -1460,13 +1600,16 @@ Tiger Shapeshifter:
   improvements:
     metatype.critter:
       effect: crittertab
+      innate: true
       text: Metatyp
       type: special
     metatype.magic:
       effect: enable_magic
+      innate: true
       text: Metatyp
       type: special
     metatype.reach:
+      innate: true
       property: reach
       text: Metatyp
       type: derived
@@ -1478,22 +1621,30 @@ Tiger Shapeshifter:
     walk: 15
   powers:
     Allergy:
+      innate: true
       select: Silver, Severe
     Dual Natured:
+      innate: true
       select: null
     Enhanced Senses:
+      innate: true
       select: Hearing, Low Light Vision, Smell
     Natural Weapon:
+      innate: true
       select: 'Claws/Bite: DV STR/2 + 2, AP 0'
     Regeneration:
+      innate: true
       select: null
     Sapience:
+      innate: true
       select: null
     Vulnerability:
+      innate: true
       select: Silver
   qualities:
     Distinctive Style:
       category: negative
+      innate: true
       removable: false
       select: null
   source: RC
@@ -1515,16 +1666,19 @@ Troll:
   category: Metahuman
   improvements:
     metatype.armor.ballistic:
+      innate: true
       property: armor_ballistic
       text: Metatyp
       type: derived
       value: 1
     metatype.armor.impact:
+      innate: true
       property: armor_impact
       text: Metatyp
       type: derived
       value: 1
     metatype.reach:
+      innate: true
       property: reach
       text: Metatyp
       type: derived
@@ -1532,12 +1686,13 @@ Troll:
   movement:
     fly: null
     run: 35
-    swim: '7'
+    swim: 7
     walk: 15
   powers: null
   qualities:
     Thermographic Vision:
       category: positive
+      innate: true
       removable: false
       select: null
   source: SR4
@@ -1561,7 +1716,7 @@ Wakyambi:
   movement:
     fly: null
     run: 25
-    swim: '6'
+    swim: 6
     walk: 10
   powers: null
   qualities:
@@ -1601,10 +1756,12 @@ Wolf Shapeshifter:
   improvements:
     metatype.critter:
       effect: crittertab
+      innate: true
       text: Metatyp
       type: special
     metatype.magic:
       effect: enable_magic
+      innate: true
       text: Metatyp
       type: special
   movement:
@@ -1614,22 +1771,30 @@ Wolf Shapeshifter:
     walk: 15
   powers:
     Allergy:
+      innate: true
       select: Silver, Severe
     Dual Natured:
+      innate: true
       select: null
     Enhanced Senses:
+      innate: true
       select: Hearing, Low Light Vision, Smell, Taste
     Natural Weapon:
+      innate: true
       select: 'Claws/Bite: DV STR/2 + 2, AP 0'
     Regeneration:
+      innate: true
       select: null
     Sapience:
+      innate: true
       select: null
     Vulnerability:
+      innate: true
       select: Silver
   qualities:
     Distinctive Style:
       category: negative
+      innate: true
       removable: false
       select: null
   source: RC
@@ -1653,7 +1818,7 @@ Wolf Shapeshifter:
   movement:
     fly: null
     run: 25
-    swim: '6'
+    swim: 6
     walk: 10
   powers: null
   qualities:
