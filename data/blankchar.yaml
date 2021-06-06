@@ -26,3 +26,11 @@ attributes:
   RES: {natural: 0, augment: 0, actual: 0, augmented_max: 0}
 essence:
   reference: 6
+derived:
+  movement:
+    walk: 10
+    run: 25
+    swim: 5
+    fly: null
+improvements: {}
+qualities: {}

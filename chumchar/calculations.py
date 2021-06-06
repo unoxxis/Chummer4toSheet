@@ -2,6 +2,7 @@
 
 import logging
 import yaml
+import copy
 
 
 # Global Data Buffers, will be filled only when required
@@ -45,14 +46,31 @@ def RecalculateCharacter(character):
 
     # ------------------------------------------------------------------
     # APPLY METATYPE
+    logger.debug('Apply Metatype values...')
     if yMetatypes is None:
         LoadDataFile('metatypes')
+    mt = yMetatypes[character['metatype']]
 
     # Attributes
-    for attr, vrac in yMetatypes[character['metatype']]['attribute_racials'].items():
+    for attr, vrac in mt['attribute_racials'].items():
         character['attributes'][attr]['racial'] = vrac
+    # Movement
+    character['derived']['movement'] = copy.deepcopy(mt['movement'])
+    # Qualities
+    for quality, qdata in mt['qualities'].items():
+        character['qualities'][quality] = copy.copy(qdata)
+    # Powers
+    logger.warning('Powers are not yet in!')
+    # Improvements
+    for key, improvement in mt['improvements'].items():
+        character['improvements'][key] = copy.copy(improvement)
 
+    # Here go: Qualities, Powers, Items, ...
 
+    # Here goes: Improvement Handling
 
+    # Here goes: Attributes
+
+    # Here goes: Skill calculation
 
     return character
