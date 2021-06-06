@@ -5,7 +5,7 @@ geom_box_offset_y = -0.65    #
 geom_box_sizeplus_x = 0.67   # Size Plus of the box graphics to accomodate shadow etc.
 geom_box_sizeplus_y = 0.00
 geom_box_textoffset_x = 0.00  # Offset of Box title text
-geom_box_textoffset_y = -0.45
+geom_box_textoffset_y = -0.46
 
 geom_fieldlabel_textoffset_x = 0.00  # Offset of field label text
 geom_fieldlabel_textoffset_y = 0.02
@@ -20,7 +20,8 @@ geom_field_textoffset_y = geom_fieldlabel_textoffset_y
 # Colors
 geom_box_headercolor = (33, 74, 103)    # Box Header
 geom_fieldlabel_color = (33, 74, 103)   # Field Label
-geom_field_color = (0, 0, 0)        # Field Text
+geom_field_color = (0, 0, 0)            # Field Text
+geom_annotation_color = (33, 74, 103)   # Annotations
 
 
 def LoadAssets(lowres=True):
@@ -161,6 +162,27 @@ def draw_field(pdf, fieldsize, x, y, text=None, dark=False, border=0, textemph='
         pdf.set_text_color(*geom_field_color)
         pdf.set_xy(x + geom_field_textoffset_x, y + geom_field_textoffset_y)
         pdf.cell(txt=text, w=assets_field_widths[fieldsize], h=0.5, align=textalign, border=border)
+
+
+def draw_annotation(pdf, x, y, w, text='Annotation', border=0, textemph='', textalign='L'):
+    """
+    Draw a small annotation onto the frame.
+
+    Parameters:
+        pdf (FPDF): PDF writer object
+        x, y (float): top left corner of box
+        w (float): width of the annotation
+        text (str): draw text onto field
+        textemph (str): FPDS emphasis string for the text
+        textalign (str): Alignment string (L, R, C)
+
+    """
+    global assets, assets_field_widths
+
+    pdf.set_font('Fira Sans Cond', textemph, 6)
+    pdf.set_text_color(*geom_annotation_color)
+    pdf.set_xy(x, y)
+    pdf.cell(txt=text, w=w, h=0.3, align=textalign, border=border)
 
 
 

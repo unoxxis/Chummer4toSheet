@@ -38,3 +38,7 @@ derived:
     fly: null
 improvements: {}
 qualities: {}
+submersion:
+  grade: 0
+initiation:
+  grade: 0

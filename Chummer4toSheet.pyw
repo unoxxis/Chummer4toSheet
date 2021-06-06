@@ -49,7 +49,7 @@ def main(lowres=False, borders=False):
 
     testchar = ImportChummerCharacter(testfile)
     # pprint.pprint(testchar)
-    testchar['improvements']['debug.maxges'] = {'type': 'attribute', 'attribute': 'GES', 'property': 'augment_max', 'value': 1, 'text': 'Debug Fiddeling'}
+    testchar['improvements']['debug.maxges'] = {'type': 'attribute', 'attribute': 'GES', 'property': 'augment', 'value': 1, 'text': 'Debug Fiddeling'}
     testchar = RecalculateCharacter(testchar)
     SaveCharacter(testchar, 'test/Cassida.pychum')
 
