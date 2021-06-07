@@ -80,8 +80,9 @@ def WriteBlockAttributes(pdf, char, ox=0.96, oy=0.00, border=0):
     rowspc = 0.57
     xmargin = 0.1
     ymargin = 0.1
-    descw = 2.6
+    descw = 2.4
     lblskip = 0.07
+    colsepextra = 0.45
     descskip = 0.3
 
     # An attribute block
@@ -115,7 +116,7 @@ def WriteBlockAttributes(pdf, char, ox=0.96, oy=0.00, border=0):
                 vallist[i] = f"{vallist[i]:+d}"
         return vallist
 
-    coloffs2 = descw + lblskip * 4.0 + 0.65 * 5 + xmargin
+    coloffs2 = descw + lblskip * 4.0 + 0.65 * 5 + colsepextra
 
     # Field Header
     fheaders = ['NAT', 'RAC', 'AUG', 'ACT', 'MAX']

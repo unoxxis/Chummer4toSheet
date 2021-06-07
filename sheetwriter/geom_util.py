@@ -76,15 +76,20 @@ def LoadFonts(pdf):
 
     pdf.add_font('Fira Sans', '', fname='test/font_store/FiraSans-Regular.ttf', uni=True)
     pdf.add_font('Fira Sans', 'B', fname='test/font_store/FiraSans-SemiBold.ttf', uni=True)
-    pdf.add_font('Fira Sans', 'BB', fname='test/font_store/FiraSans-Bold.ttf', uni=True)
+    # pdf.add_font('Fira Sans', 'BB', fname='test/font_store/FiraSans-Bold.ttf', uni=True)
     pdf.add_font('Fira Sans', 'BBB', fname='test/font_store/FiraSans-Black.ttf', uni=True)
     pdf.add_font('Fira Sans Cond', '', fname='test/font_store/FiraSansCondensed-Regular.ttf', uni=True)
-    pdf.add_font('Fira Sans Cond', 'B', fname='test/font_store/FiraSansCondensed-SemiBold.ttf', uni=True)
-    pdf.add_font('Fira Sans Cond', 'BB', fname='test/font_store/FiraSansCondensed-Bold.ttf', uni=True)
-    pdf.add_font('Fira Sans Cond', 'BBB', fname='test/font_store/FiraSansCondensed-Black.ttf', uni=True)
-    pdf.add_font('Fira Code', '', fname='test/font_store/FiraCode-Regular.ttf', uni=True)
-    pdf.add_font('Fira Code', 'B', fname='test/font_store/FiraCode-SemiBold.ttf', uni=True)
-    pdf.add_font('Fira Code', 'BB', fname='test/font_store/FiraCode-Bold.ttf', uni=True)
+    # pdf.add_font('Fira Sans Cond', 'B', fname='test/font_store/FiraSansCondensed-SemiBold.ttf', uni=True)
+    # pdf.add_font('Fira Sans Cond', 'BB', fname='test/font_store/FiraSansCondensed-Bold.ttf', uni=True)
+    # pdf.add_font('Fira Sans Cond', 'BBB', fname='test/font_store/FiraSansCondensed-Black.ttf', uni=True)
+    # pdf.add_font('Fira Code', '', fname='test/font_store/FiraCode-Regular.ttf', uni=True)
+    # pdf.add_font('Fira Code', 'B', fname='test/font_store/FiraCode-SemiBold.ttf', uni=True)
+    # pdf.add_font('Fira Code', 'BB', fname='test/font_store/FiraCode-Bold.ttf', uni=True)
+    # pdf.add_font('Rokkitt', '', fname='test/font_store/Rokkitt-Regular.ttf', uni=True)
+    pdf.add_font('Rokkitt', 'B', fname='test/font_store/Rokkitt-SemiBold.ttf', uni=True)
+    # pdf.add_font('Rokkitt', 'BB', fname='test/font_store/Rokkitt-Bold.ttf', uni=True)
+    pdf.add_font('Rokkitt', 'BBB', fname='test/font_store/Rokkitt-ExtraBold.ttf', uni=True)
+    # pdf.add_font('Roboto Slab', 'B', fname='test/font_store/RobotoSlab-SemiBold.ttf', uni=True)
 
 
 def draw_box(pdf, boxheight, x=0.0, y=0.68, text='Box', dark=False, border=0):
@@ -108,7 +113,7 @@ def draw_box(pdf, boxheight, x=0.0, y=0.68, text='Box', dark=False, border=0):
     pdf.image(ass, x=(x + geom_box_offset_x), y=(y + geom_box_offset_y), h=(assets_box_heights[boxheight] + geom_box_sizeplus_y))
 
     # Caption Text
-    pdf.set_font('Fira Code', 'BB', 10)
+    pdf.set_font('Rokkitt', 'BBB', 10)
     pdf.set_text_color(*geom_box_headercolor)
     pdf.set_xy(x + geom_box_textoffset_x, y + geom_box_textoffset_y)
     pdf.cell(txt=text, w=10.0, h=0.5, align='L', border=border)
@@ -125,7 +130,7 @@ def draw_field_label(pdf, x=0.0, y=0.0, w=3.0, text='Label', border=0):
         text (str): headline text
     """
 
-    pdf.set_font('Fira Sans Cond', 'B', 10)
+    pdf.set_font('Rokkitt', 'B', 9)
     pdf.set_text_color(*geom_fieldlabel_color)
     pdf.set_xy(x + geom_fieldlabel_textoffset_x, y + geom_fieldlabel_textoffset_y)
     pdf.cell(txt=text, w=w, h=0.5, align='L', border=border)
