@@ -70,7 +70,7 @@
 	"settings": {
 		"LSP": {
 			// We use a project-specific PyLSP using our Dev Venv
-			"pylsp": {
+			"venv-pylsp": {
 				"enabled": true,
 				"command": [
 					"/loc/devel/pyenv_root/versions/chumsheet-dev/bin/pylsp",
