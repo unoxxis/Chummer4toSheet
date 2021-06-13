@@ -1,47 +1,44 @@
 {
-	"folders":
-	[
+	"folders": [
 		{
-			"file_exclude_patterns":
-			[
-				"FiraSans-Regular.pkl",
-				"FiraCode-Regular.pkl",
+			"file_exclude_patterns": [
+				"bundle/.python-version",
+				"Rokkitt-Regular.pkl",
 				"\"test/Wandler Charakterbogen v21.pdf\"",
+				"FiraCode-Bold.pkl",
+				".python-version",
+				"FiraSans-Regular.pkl",
+				"Rokkitt-Black.pkl",
+				"Chummer4toSheet.log",
+				"test/Cassida.pdf",
+				"Rokkitt-SemiBold.pkl",
+				"FiraSans-Black.pkl",
+				"FiraSansCondensed-Bold.pkl",
+				"Rokkitt-Bold.pkl",
+				"FiraSansCondensed-SemiBold.pkl",
+				"FiraCode-Regular.pkl",
+				"FiraSansCondensed-Black.pkl",
+				"test/Cassida.pychum",
+				"FiraSansCondensed-Regular.pkl",
+				"FiraSans-Bold.pkl",
+				"RobotoSlab-SemiBold.pkl",
+				"FiraSans-SemiBold.pkl",
 				"FiraCode-SemiBold.pkl",
 				"Chummer4toSheet.sublime-workspace",
-				"FiraSans-Black.pkl",
-				"Rokkitt-SemiBold.pkl",
-				"FiraSansCondensed-Regular.pkl",
-				"FiraCode-Bold.pkl",
-				"Rokkitt-Black.pkl",
-				"Rokkitt-Bold.pkl",
-				".python-version",
-				"FiraSansCondensed-Bold.pkl",
-				"Rokkitt-Regular.pkl",
-				"FiraSansCondensed-Black.pkl",
-				"FiraSans-Bold.pkl",
-				"bundle/.python-version",
-				"FiraSansCondensed-SemiBold.pkl",
-				"Chummer4toSheet.log",
-				"FiraSans-SemiBold.pkl",
-				"RobotoSlab-SemiBold.pkl",
-				"test/Cassida.pychum",
-				"test/Cassida.pdf",
 				"Rokkitt-ExtraBold.pkl",
 			],
-			"folder_exclude_patterns":
-			[
-				"test/font_store",
-				"data/__pycache__",
-				"sheetwriter/__pycache__",
-				"chumchar/__pycache__",
+			"folder_exclude_patterns": [
+				".mypy_cache",
 				"__pycache__",
+				"sheetwriter/__pycache__",
+				"data/__pycache__",
+				"chumchar/__pycache__",
+				"test/font_store",
 			],
 			"path": ".",
 		}
 	],
-	"build_systems":
-	[
+	"build_systems": [
 		{
 			"name": "Run Chummer4toSheet (Force Log)",
 			"working_dir": "${project_path}",
@@ -69,4 +66,23 @@
 			"shell_cmd": "\"python\" -u \"$file\"",
 		},
 	],
+	// Per Project PyLSP settings
+	"settings": {
+		"LSP": {
+			// We use a project-specific PyLSP using our Dev Venv
+			"pylsp": {
+				"enabled": true,
+				"command": [
+					"/loc/devel/pyenv_root/versions/chumsheet-dev/bin/pylsp",
+				],
+				"settings": {
+					"pylsp.plugins.flake8.executable": "/loc/devel/pyenv_root/versions/chumsheet-dev/bin/flake8",
+				},
+			},
+			// Therefore we disable the global one
+			"LSP-pylsp": {
+				"enabled": false
+			},
+		},
+	},
 }

@@ -52,6 +52,8 @@ pyenv activate $DEV_ENV_NAME
 
 echo "Installing requirements..."
 pip install -r requirements-dev.txt
+echo "Installing LSP server to dev venv for Sublime Text PyLSP..."
+pip install "python-lsp-server[all]" python-lsp-black mypy-ls pyls-isort
 
 #--------------------
 # BUNDLE ENVIRONMENT
