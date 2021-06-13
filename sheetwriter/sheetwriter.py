@@ -2,10 +2,11 @@
 # Author: Boris Wezisla
 
 import logging
+
 from fpdf import FPDF
 
 # Blockwriters
-from .blockwriters import *
+from .blockwriters import WriteBlockHead, WriteBlockAttributes
 from .geom_util import LoadAssets, LoadFonts
 
 
@@ -21,8 +22,8 @@ def WriteCharacterSheet(char, filename, lowres=False, borders=False):
     """
 
     # Logging
-    logger = logging.getLogger('sheetwriter.WriteCharacterSheet')
-    logger.debug('Entering Function')
+    logger = logging.getLogger("sheetwriter.WriteCharacterSheet")
+    logger.debug("Entering Function")
 
     # Determine Border Parameter for blockwriters
     if borders:
@@ -33,7 +34,7 @@ def WriteCharacterSheet(char, filename, lowres=False, borders=False):
     currpage = 0
 
     # Initialize PDF Writer
-    pdf = FPDF(orientation='P', unit='cm', format='A4')
+    pdf = FPDF(orientation="P", unit="cm", format="A4")
 
     # Get correct assets set
     LoadAssets(lowres)
@@ -49,20 +50,15 @@ def WriteCharacterSheet(char, filename, lowres=False, borders=False):
     # PAGE ONE
     pdf.add_page()
     currpage += 1
-    logger.info(f'New Page {currpage}:')
+    logger.info(f"New Page {currpage}:")
 
-    # Background
-    # logger.info(f"Embedding Background '{sheet_backgrounds['Allgemeines']}'...")
-    # pdf.image(sheet_backgrounds['Allgemeines'], x=0, y=0, w=21.0)
-
+    # X Offset for all Blocks
     xoffs = 0.96
 
-    logger.info('Writing Head Block...')
+    logger.info("Writing Head Block...")
     WriteBlockHead(pdf, char, ox=xoffs, oy=1, border=border)
 
-    logger.info('Writing Attributes Block...')
+    logger.info("Writing Attributes Block...")
     WriteBlockAttributes(pdf, char, ox=xoffs, oy=4, border=border)
 
-    pdf.output(name=filename, dest='F')
-
-
+    pdf.output(name=filename, dest="F")

@@ -1,20 +1,27 @@
 # Geometric Utility Functions
 
-geom_box_offset_x = -0.30    # Offset for box graphics relativ to box origin
-geom_box_offset_y = -0.65    #
-geom_box_sizeplus_x = 0.67   # Size Plus of the box graphics to accomodate shadow etc.
+# Offset for box graphics relativ to box origin
+geom_box_offset_x = -0.30
+geom_box_offset_y = -0.65
+# Size Plus of the box graphics to accomodate shadow etc.
+geom_box_sizeplus_x = 0.67
 geom_box_sizeplus_y = 0.00
-geom_box_textoffset_x = 0.00  # Offset of Box title text
+# Size Plus of the box graphics to accomodate shadow etc.
+geom_box_textoffset_x = 0.00
 geom_box_textoffset_y = -0.46
 
-geom_fieldlabel_textoffset_x = 0.00  # Offset of field label text
+# Offset of field label text
+geom_fieldlabel_textoffset_x = 0.00
 geom_fieldlabel_textoffset_y = 0.02
 
-geom_field_offset_x = -0.05    # Offset for field graphics relativ to field origin
-geom_field_offset_y = -0.05    #
-geom_field_sizeplus_x = 0.15   # Size Plus of the field graphics to accomodate shadow etc.
+# Offset for field graphics relativ to field origin
+geom_field_offset_x = -0.05
+geom_field_offset_y = -0.05
+# Size Plus of the field graphics to accomodate shadow etc.
+geom_field_sizeplus_x = 0.15
 geom_field_sizeplus_y = 0.15
-geom_field_textoffset_x = 0.00  # Text offset
+# Text offset
+geom_field_textoffset_x = 0.00
 geom_field_textoffset_y = geom_fieldlabel_textoffset_y
 
 # Colors
@@ -22,6 +29,11 @@ geom_box_headercolor = (33, 74, 103)    # Box Header
 geom_fieldlabel_color = (33, 74, 103)   # Field Label
 geom_field_color = (0, 0, 0)            # Field Text
 geom_annotation_color = (33, 74, 103)   # Annotations
+
+# Global Dictionaries
+assets = dict()                # Contains all assets
+assets_box_heights = dict()    # Contains the heights per box asset
+assets_field_widths = dict()   # Contains the widths per field asset
 
 
 def LoadAssets(lowres=True):
@@ -74,25 +86,42 @@ def LoadFonts(pdf):
         pdf (FPDF): PDF writer
     """
 
-    pdf.add_font('Fira Sans', '', fname='test/font_store/FiraSans-Regular.ttf', uni=True)
-    pdf.add_font('Fira Sans', 'B', fname='test/font_store/FiraSans-SemiBold.ttf', uni=True)
-    # pdf.add_font('Fira Sans', 'BB', fname='test/font_store/FiraSans-Bold.ttf', uni=True)
-    pdf.add_font('Fira Sans', 'BBB', fname='test/font_store/FiraSans-Black.ttf', uni=True)
-    pdf.add_font('Fira Sans Cond', '', fname='test/font_store/FiraSansCondensed-Regular.ttf', uni=True)
-    # pdf.add_font('Fira Sans Cond', 'B', fname='test/font_store/FiraSansCondensed-SemiBold.ttf', uni=True)
-    # pdf.add_font('Fira Sans Cond', 'BB', fname='test/font_store/FiraSansCondensed-Bold.ttf', uni=True)
-    # pdf.add_font('Fira Sans Cond', 'BBB', fname='test/font_store/FiraSansCondensed-Black.ttf', uni=True)
-    # pdf.add_font('Fira Code', '', fname='test/font_store/FiraCode-Regular.ttf', uni=True)
-    # pdf.add_font('Fira Code', 'B', fname='test/font_store/FiraCode-SemiBold.ttf', uni=True)
-    # pdf.add_font('Fira Code', 'BB', fname='test/font_store/FiraCode-Bold.ttf', uni=True)
-    # pdf.add_font('Rokkitt', '', fname='test/font_store/Rokkitt-Regular.ttf', uni=True)
-    pdf.add_font('Rokkitt', 'B', fname='test/font_store/Rokkitt-SemiBold.ttf', uni=True)
-    # pdf.add_font('Rokkitt', 'BB', fname='test/font_store/Rokkitt-Bold.ttf', uni=True)
-    pdf.add_font('Rokkitt', 'BBB', fname='test/font_store/Rokkitt-ExtraBold.ttf', uni=True)
-    # pdf.add_font('Roboto Slab', 'B', fname='test/font_store/RobotoSlab-SemiBold.ttf', uni=True)
+    pdf.add_font('Fira Sans', '', uni=True,
+                 fname='test/font_store/FiraSans-Regular.ttf')
+    pdf.add_font('Fira Sans', 'B', uni=True,
+                 fname='test/font_store/FiraSans-SemiBold.ttf')
+    # pdf.add_font('Fira Sans', 'BB', uni=True,
+    #              fname='test/font_store/FiraSans-Bold.ttf')
+    pdf.add_font('Fira Sans', 'BBB', uni=True,
+                 fname='test/font_store/FiraSans-Black.ttf')
+    pdf.add_font('Fira Sans Cond', '', uni=True,
+                 fname='test/font_store/FiraSansCondensed-Regular.ttf')
+    # pdf.add_font('Fira Sans Cond', 'B',  uni=True,
+    #              fname='test/font_store/FiraSansCondensed-SemiBold.ttf')
+    # pdf.add_font('Fira Sans Cond', 'BB', uni=True,
+    #              fname='test/font_store/FiraSansCondensed-Bold.ttf')
+    # pdf.add_font('Fira Sans Cond', 'BBB', uni=True,
+    #              fname='test/font_store/FiraSansCondensed-Black.ttf')
+    # pdf.add_font('Fira Code', '', uni=True,
+    #              fname='test/font_store/FiraCode-Regular.ttf')
+    # pdf.add_font('Fira Code', 'B', uni=True,
+    #              fname='test/font_store/FiraCode-SemiBold.ttf')
+    # pdf.add_font('Fira Code', 'BB', uni=True,
+    #              fname='test/font_store/FiraCode-Bold.ttf')
+    # pdf.add_font('Rokkitt', '', uni=True,
+    #              fname='test/font_store/Rokkitt-Regular.ttf')
+    pdf.add_font('Rokkitt', 'B', uni=True,
+                 fname='test/font_store/Rokkitt-SemiBold.ttf')
+    # pdf.add_font('Rokkitt', 'BB', uni=True,
+    #              fname='test/font_store/Rokkitt-Bold.ttf')
+    # pdf.add_font('Rokkitt', 'BBB', uni=True,
+    #              fname='test/font_store/Rokkitt-ExtraBold.ttf')
+    # pdf.add_font('Roboto Slab', 'B', uni=True,
+    #              fname='test/font_store/RobotoSlab-SemiBold.ttf')
 
 
-def draw_box(pdf, boxheight, x=0.0, y=0.68, text='Box', dark=False, border=0):
+def draw_box(pdf, boxheight, x=0.0, y=0.68, text='Box',
+             dark=False, border=0):
     """
     Draw a field onto the frame.
 
@@ -106,11 +135,14 @@ def draw_box(pdf, boxheight, x=0.0, y=0.68, text='Box', dark=False, border=0):
     global assets, assets_box_heights
 
     if boxheight not in assets_box_heights.keys():
-        raise ValueError(f"Requested box height '{boxheight}' is not available")
+        raise ValueError(
+            f"Requested box height '{boxheight}' is not available"
+        )
 
     ass = assets[f"box_{boxheight}"]
 
-    pdf.image(ass, x=(x + geom_box_offset_x), y=(y + geom_box_offset_y), h=(assets_box_heights[boxheight] + geom_box_sizeplus_y))
+    pdf.image(ass, x=(x + geom_box_offset_x), y=(y + geom_box_offset_y),
+              h=(assets_box_heights[boxheight] + geom_box_sizeplus_y))
 
     # Caption Text
     pdf.set_font('Rokkitt', 'BBB', 10)
@@ -132,11 +164,13 @@ def draw_field_label(pdf, x=0.0, y=0.0, w=3.0, text='Label', border=0):
 
     pdf.set_font('Rokkitt', 'B', 9)
     pdf.set_text_color(*geom_fieldlabel_color)
-    pdf.set_xy(x + geom_fieldlabel_textoffset_x, y + geom_fieldlabel_textoffset_y)
+    pdf.set_xy(x + geom_fieldlabel_textoffset_x,
+               y + geom_fieldlabel_textoffset_y)
     pdf.cell(txt=text, w=w, h=0.5, align='L', border=border)
 
 
-def draw_field(pdf, fieldsize, x, y, text=None, dark=False, border=0, textemph='', textalign='L'):
+def draw_field(pdf, fieldsize, x, y, text=None, dark=False, border=0,
+               textemph='', textalign='L'):
     """
     Draw a field onto the frame.
 
@@ -153,23 +187,28 @@ def draw_field(pdf, fieldsize, x, y, text=None, dark=False, border=0, textemph='
     global assets, assets_field_widths
 
     if fieldsize not in assets_field_widths.keys():
-        raise ValueError(f"Requested field size '{fieldsize}' is not available")
+        raise ValueError(
+            f"Requested field size '{fieldsize}' is not available"
+        )
 
     if dark:
         ass = assets[f"field_{fieldsize}d"]
     else:
         ass = assets[f"field_{fieldsize}"]
 
-    pdf.image(ass, x=(x + geom_field_offset_x), y=(y + geom_field_offset_y), w=(assets_field_widths[fieldsize] + geom_field_sizeplus_x))
+    pdf.image(ass, x=(x + geom_field_offset_x), y=(y + geom_field_offset_y),
+              w=(assets_field_widths[fieldsize] + geom_field_sizeplus_x))
 
     if text is not None:
         pdf.set_font('Fira Sans', textemph, 10)
         pdf.set_text_color(*geom_field_color)
         pdf.set_xy(x + geom_field_textoffset_x, y + geom_field_textoffset_y)
-        pdf.cell(txt=text, w=assets_field_widths[fieldsize], h=0.5, align=textalign, border=border)
+        pdf.cell(txt=text, w=assets_field_widths[fieldsize], h=0.5,
+                 align=textalign, border=border)
 
 
-def draw_annotation(pdf, x, y, w, text='Annotation', border=0, textemph='', textalign='L'):
+def draw_annotation(pdf, x, y, w, text='Annotation', border=0,
+                    textemph='', textalign='L'):
     """
     Draw a small annotation onto the frame.
 
@@ -190,9 +229,9 @@ def draw_annotation(pdf, x, y, w, text='Annotation', border=0, textemph='', text
     pdf.cell(txt=text, w=w, h=0.3, align=textalign, border=border)
 
 
-
+#
+#
 # Old functions:
-
 def move_point(point, dx, dy):
     """Moves a point tuple relatively.
 

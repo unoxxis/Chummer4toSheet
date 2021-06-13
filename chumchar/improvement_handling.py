@@ -3,16 +3,19 @@
 import logging
 
 
-def ScanImprovements(improvements, itype=None, iproperty=None, iattribute=None, ieffect=None, return_text=False):
+def ScanImprovements(improvements, itype=None, iproperty=None, iattribute=None,
+                     ieffect=None, return_text=False):
     """
-    Scans the improvement list and collects similar improvements. Returns the associated value.
+    Scans the improvement list and collects similar improvements.
+    Returns the associated value.
 
     Mandatory Parameters:
         improvements (dict): The improvements dict from a character.
         itype (str): Type of improvement
 
     Optional Parameters:
-        depend on the improvement type and select improvements. Matching improvements will be added.
+        depend on the improvement type and select improvements.
+        Matching improvements will be added.
 
     Returns:
         modified value for numeric type improvements
@@ -32,7 +35,8 @@ def ScanImprovements(improvements, itype=None, iproperty=None, iattribute=None, 
         retval = 0
         for key, impr in improvements.items():
             if impr['type'] == itype:
-                if impr['property'] == iproperty and impr['attribute'] == iattribute:
+                if (impr['property'] == iproperty
+                        and impr['attribute'] == iattribute):
                     retval += impr['value']
                     text += f"{impr['value']:+d} ({impr['text']})\n"
     elif itype == 'derived':

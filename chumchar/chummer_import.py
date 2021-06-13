@@ -30,9 +30,13 @@ def ImportChummerCharacter(filename):
     logger.info(f"Loaded character with street name '{xmldata.alias.cdata}'.")
 
     try:
-        logger.debug(f'Chummer Version of XML data: {xmldata.appversion.cdata}')
+        logger.debug('Chummer Version of XML data: '
+                     f'{xmldata.appversion.cdata}')
         if int(xmldata.appversion.cdata) < _CHUM_MIN_VERSION:
-            raise ValueError(f'Stored XML data is from a too old Chummer version. Please update at least to version {_CHUM_MIN_VERSION}!')
+            raise ValueError(
+                'Stored XML data is from a too old Chummer version. '
+                f'Please update at least to version {_CHUM_MIN_VERSION}!'
+            )
     except AttributeError:
         logger.error('XML data seems not to be a chummer file!')
         raise
@@ -70,7 +74,8 @@ def ImportChummerCharacter(filename):
         elif attributename == 'BOD':
             attributename = 'KON'
 
-        if attributename in ['KON', 'GES', 'REA', 'STR', 'CHA', 'INT', 'LOG', 'WIL', 'EDG']:
+        if attributename in ['KON', 'GES', 'REA', 'STR', 'CHA',
+                             'INT', 'LOG', 'WIL', 'EDG']:
             # Racial
             # Guessed from metatype min and max if they are not 1 / 6
             vrac = 0
@@ -85,7 +90,8 @@ def ImportChummerCharacter(filename):
             character['attributes'][attributename]['natural'] = vnat
 
     # Essence
-    character['essence']['reference'] = float(xmldata.essenceatspecialstart.cdata)
+    character['essence']['reference'] = (
+        float(xmldata.essenceatspecialstart.cdata))
 
     # Recalculate Character and return
     return RecalculateCharacter(character)
