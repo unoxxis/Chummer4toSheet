@@ -1,0 +1,3 @@
+[submodule "venv-tools"]
+	path = venv-tools
+	url = https://github.com/unoxxis/venv-tools
