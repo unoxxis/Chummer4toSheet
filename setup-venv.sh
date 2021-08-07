@@ -18,18 +18,6 @@ echo "Activating pyenv..."
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
-#----------------
-# PYTHON VERSION
-#----------------
-
-# Install the Python version, if not already installed
-if pyenv versions --bare | grep -q "$PY_VERSION"; then
-	echo "Python Version <$PY_VERSION> already present."
-else
-	echo "Installing Python version <$PY_VERSION>..."
-	pyenv install --skip-existing "$PY_VERSION"
-fi
-
 #-------------------------
 # DEVELOPMENT ENVIRONMENT
 #-------------------------
@@ -61,17 +49,15 @@ esac
 
 if [[ "$createenv" == "yes" ]]; then
 	echo "Creating virtual environment <$DEV_ENV_NAME> ..."
-	pyenv virtualenv "$PY_VERSION" "$DEV_ENV_NAME"
+	./venv-tools/venv-create "$DEV_ENV_NAME" "$PY_VERSION"
 	createenv=
 fi
 
-
-
 echo "Setting local virtual environment for pyenv..."
-pyenv local $DEV_ENV_NAME
+pyenv local "$DEV_ENV_NAME"
 
 echo "Activate development environment..."
-pyenv activate $DEV_ENV_NAME
+pyenv activate "$DEV_ENV_NAME"
 
 echo "Installing requirements..."
 pip install -r requirements-dev.txt
