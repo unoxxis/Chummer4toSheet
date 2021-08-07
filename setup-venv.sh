@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Setup two virtual environments for developing and bundling the tool.
-PY_VERSION='3.9.4'
+PY_VERSION='3.9.6'
 DEV_ENV_NAME='chumsheet-dev'
 BUNDLE_ENV_NAME='chumsheet-bundle'
 
@@ -44,6 +44,8 @@ else
 	pyenv virtualenv $PY_VERSION $DEV_ENV_NAME
 fi
 
+# TODO Check if virtual environment is correct python version!
+
 echo "Setting local virtual environment for pyenv..."
 pyenv local $DEV_ENV_NAME
 
@@ -73,7 +75,7 @@ fi
 echo "Setting local virtual environment for pyenv..."
 pyenv local $BUNDLE_ENV_NAME
 
-echo "Activate development environment..."
+echo "Activate bundle environment..."
 pyenv activate $BUNDLE_ENV_NAME
 
 echo "Installing requirements..."
