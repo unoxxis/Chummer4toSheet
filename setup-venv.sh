@@ -1,17 +1,26 @@
 #!/bin/bash
 
 # Setup two virtual environments for developing and bundling the tool.
-PY_VERSION='3.9.6'
-DEV_ENV_NAME='chumsheet-dev'
-BUNDLE_ENV_NAME='chumsheet-bundle'
+# Call with -C to clean 
+
+req_py_version='3.9.6'
+
+#-----------------
+# VENV-TOOLS CHECK
+#-----------------
+echo "Checking for venv-tools..."
+if [[ ! -x venv-tools/venv-setup ]]; then
+	echo "venv-tools submodule is not initialized. Please run 'git submodule init'!" >&2
+	exit 98
+fi
 
 #-------------
 # PYENV CHECK
 #-------------
 echo "Checking for pyenv..."
 if ! command -v pyenv 1>/dev/null 2>&1; then
-	echo 'pyenv and pyenv-virtualenv are required for this script!'
-	echo 'Please see https://github.com/pyenv/pyenv and https://github.com/pyenv/pyenv-virtualenv'
+	echo 'pyenv and pyenv-virtualenv are required for this script!' >&2
+	echo 'Please see https://github.com/pyenv/pyenv and https://github.com/pyenv/pyenv-virtualenv' >&2
 	exit 99
 fi
 echo "Activating pyenv..."
@@ -24,66 +33,46 @@ eval "$(pyenv virtualenv-init -)"
 echo ""
 echo "*** SETUP DEVELOPMENT ENVIRONMENT ***"
 
-echo "Checking if virtual environment $DEV_ENV_NAME already exists..."
-./venv-tools/venv-check-version "$DEV_ENV_NAME" "$PY_VERSION" 1>/dev/null 2>&1
-case $? in
-	0)	echo "Virtual environment exists and has correct python version."
-		;;
-	1)  echo "Virtual environment exists but is for a different python version $(./venv-tools/venv-check-version "$DEV_ENV_NAME")!"
-		# TODO Add an option to save and restore old version requirement data.
-		read -p "Reinstall with correct python version $PY_VERSION? " -n 1 -r
-		echo
-		if [[ $REPLY =~ ^[Yy]$ ]]; then
-			echo "Deleting old virtual environment..."
-			pyenv virtualenv-delete "$DEV_ENV_NAME"
-			createenv='yes'
-		else
-			echo "The script will still try to install correct dependencies."
-			echo "However, it is not guaranteed that it will work if the versions"
-			echo "differ by substantial amount."
-		fi
-		;;
-	2)	echo "Virtual environment does not exist and will be created."
-		createenv='yes'
-esac
+venv_name='chumsheet-dev'
+venv_local_path='.'
+venv_req_file="$venv_local_path/requirements-dev.txt"
 
-if [[ "$createenv" == "yes" ]]; then
-	echo "Creating virtual environment <$DEV_ENV_NAME> ..."
-	./venv-tools/venv-create "$DEV_ENV_NAME" "$PY_VERSION"
-	createenv=
+scriptflags=('-v' '-A' '-A' '-d' '-u')
+
+read -p "Do you use Sublime Text and want to use a local Python-LSP [y|N]? " -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+	scriptflags+=( '-S' )
+fi
+
+./venv-tools/venv-setup "${scriptflags[@]}" -n "$venv_name" -p "$req_py_version" -r "$venv_req_file"
+if [[ $? -ne 0 ]]; then
+	echo "ERROR: An error (#$?) occurred in venv-setup."
+	exit 97
 fi
 
 echo "Setting local virtual environment for pyenv..."
-pyenv local "$DEV_ENV_NAME"
-
-echo "Activate development environment..."
-pyenv activate "$DEV_ENV_NAME"
-
-echo "Installing requirements..."
-pip install -r requirements-dev.txt
-echo "Installing LSP server to dev venv for Sublime Text PyLSP..."
-pip install "python-lsp-server[all]" python-lsp-black mypy-ls pyls-isort types-PyYAML
+cd "$venv_local_path"
+pyenv local "$venv_name"
 
 #--------------------
 # BUNDLE ENVIRONMENT
 #--------------------
 echo ""
 echo "*** SETUP BUNDLE ENVIRONMENT ***"
-cd bundle
 
-# Check if Virtual environment for development is already there
-if pyenv virtualenvs --bare | grep -q $BUNDLE_ENV_NAME; then
-	echo "Virtual environment <$BUNDLE_ENV_NAME> already present."
-else
-	echo "Creating virtual environment <$BUNDLE_ENV_NAME>..."
-	pyenv virtualenv $PY_VERSION $BUNDLE_ENV_NAME
+venv_name='chumsheet-bundle'
+venv_local_path='bundle'
+venv_req_file="$venv_local_path/requirements-bundle.txt"
+
+scriptflags=('-v' '-A' '-A' '-d' '-u' )
+
+./venv-tools/venv-setup "${scriptflags[@]}" -n "$venv_name" -p "$req_py_version" -r "$venv_req_file"
+if [[ $? -ne 0 ]]; then
+	echo "ERROR: An error (#$?) occurred in venv-setup."
+	exit 97
 fi
 
 echo "Setting local virtual environment for pyenv..."
-pyenv local $BUNDLE_ENV_NAME
-
-echo "Activate bundle environment..."
-pyenv activate $BUNDLE_ENV_NAME
-
-echo "Installing requirements..."
-pip install -r requirements-bundle.txt
+cd "$venv_local_path"
+pyenv local "$venv_name"
